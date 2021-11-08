@@ -10,4 +10,4 @@
 #•	While the graphical version may see more appealing to the users but can be limited in case of functionality. These is where the Linux command line commonly known as Linux Shell shines.
 
 #What is a shell?
-o	Linux shell is a program that allows text based interaction between the user and the operating system, this interaction is carried out by typing commands into the interface and receving the response in the same way.
+#o	Linux shell is a program that allows text based interaction between the user and the operating system, this interaction is carried out by typing commands into the interface and  #receving the response in the same way.
