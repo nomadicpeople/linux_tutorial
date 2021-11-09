@@ -11,7 +11,7 @@ In this section, we will take a look at linux shell in detail.
 
 #### Linux shell
 
-![Shell](../../images/Shell.PNG)
+![Shell](../../imageFolder/Shell.PNG)
 
 - This command line interface (CLI) will enable you to effectively work on linux laptop/server/virtual machine.
 - While the graphical version may see more appealing to the users but can be limited in case of functionality. These is where the Linux command line commonly known as **`Linux Shell`** shines.
