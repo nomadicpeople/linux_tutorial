@@ -4,7 +4,7 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
 
 # Table of Contents
 
-- [01-Introduction](/linux_tutorial/01-Introduction)
+- [01-Introduction](/docs/01-Introduction)
 
 - [02-Working-With-Shell-Part-I](docs/02-Working-With-Shell-Part-I)
 
