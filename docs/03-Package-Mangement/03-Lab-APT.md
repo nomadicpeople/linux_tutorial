@@ -1,16 +1,5 @@
-# Lab - DPKG and APT
+# Lab - APT
 
-- Access Hands-On Labs here [Hands-On Labs](https://kodekloud.com/courses/873064/lectures/17074429)
-
-Package managers that you use on a debian based distro
-```
-Debain distros use dpkg.
-```
-
-To install a package for **`firefox`** browser which has been downloaded at /root/firefox.deb. The dependencies might fail.
-```
-$ sudo dpkg -i /root/firefox.deb
-```
 
 To install a package using **`APT`**
 ```

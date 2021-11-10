@@ -23,9 +23,8 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
 - [03-Package-Mangement](docs/03-Package-Mangement)
 
   - [01-Package-Management-Distribution](docs/03-Package-Mangement/01-Package-Management-Distribution.md)
-  - [02-DPKG-AND-APT](docs/03-Package-Mangement/02-APT.md)
-  - [03-APT-vs-APT-GET](docs/03-Package-Mangement/03-APT-vs-APT-GET.md)
-  - [04-Lab-DPKG-AND-APT](docs/03-Package-Mangement/04-Lab-DPKG-AND-APT.md)
+  - [02-APT](docs/03-Package-Mangement/02-APT.md)
+  - [03-Lab-DPKG-AND-APT](docs/03-Package-Mangement/03-Lab-APT.md)
 
 
 - [04-Working-With-Shell-Part-II](docs/05-Working-With-Shell-Part-II)
