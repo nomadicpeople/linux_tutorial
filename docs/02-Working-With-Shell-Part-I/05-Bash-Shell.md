@@ -1,6 +1,5 @@
 # Bash Shell
 
-- Take me to the [Video Tutorial](https://kodekloud.com/courses/873064/lectures/17074351)
 
 ## Different types of Shells
 
