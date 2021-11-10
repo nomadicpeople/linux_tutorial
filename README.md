@@ -16,7 +16,6 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
 
 - [02-Linux-Core-Concepts](docs/03-Linux-Core-Concepts)
 
-  - 
   - [01-The-Linux-Kernel](docs/03-Linux-Core-Concepts/02-The-Linux-Kernel.md)
   - [02-Working-With-Hardware](docs/03-Linux-Core-Concepts/03-Working-with-hardware.md)
   - [03-Lab-Linux-Kernel](docs/03-Linux-Core-Concepts/04-Lab-Linux-Kernel.md)
