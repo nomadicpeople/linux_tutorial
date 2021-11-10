@@ -1,6 +1,6 @@
 # USER MANAGEMENT
 
-  - Take me to the [Tutorial](https://kodekloud.com/courses/873064/lectures/17074501)
+  
   - In this lecture we will learn how to create and manage user accounts in Linux.
 
   #### User Add
