@@ -12,13 +12,13 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [03-Command-Line-Help](docs/01-Working-With-Shell-Part-I/03-Command-Line-Help.md)
   - [04-Bash-Shell](docs/01-Working-With-Shell-Part-I/04-Bash-Shell.md)
 
-- [02-Linux-Core-Concepts](docs/03-Linux-Core-Concepts)
+- [02-Linux-Core-Concepts](docs/02-Linux-Core-Concepts)
 
-  - [01-The-Linux-Kernel](docs/03-Linux-Core-Concepts/02-The-Linux-Kernel.md)
-  - [02-Working-With-Hardware](docs/03-Linux-Core-Concepts/03-Working-with-hardware.md)
-  - [03-Lab-Linux-Kernel](docs/03-Linux-Core-Concepts/04-Lab-Linux-Kernel.md)
-  - [04-File-Types](docs/03-Linux-Core-Concepts/07-File-Types.md)
-  - [05-Filesystem-Hierarchy](docs/03-Linux-Core-Concepts/08-Filesystem-Hierarchy.md)
+  - [01-The-Linux-Kernel](docs/02-Linux-Core-Concepts/01-The-Linux-Kernel.md)
+  - [02-Working-With-Hardware](docs/02-Linux-Core-Concepts/02-Working-with-hardware.md)
+  - [03-Lab-Linux-Kernel](docs/02-Linux-Core-Concepts/03-Lab-Linux-Kernel.md)
+  - [04-File-Types](docs/02-Linux-Core-Concepts/04-File-Types.md)
+  - [05-Filesystem-Hierarchy](docs/02-Linux-Core-Concepts/05-Filesystem-Hierarchy.md)
   
   
 
