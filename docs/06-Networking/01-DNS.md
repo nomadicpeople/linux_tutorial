@@ -124,6 +124,4 @@
   ;; MSG SIZE rcvd: 139
   ```
 
-# HANDS-ON LABS
-  
-  - Lets have some fun and challenging [exercises](https://kodekloud.com/courses/873064/lectures/17074530)
+
