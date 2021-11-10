@@ -20,15 +20,12 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [04-File-Types](docs/02-Linux-Core-Concepts/04-File-Types.md)
   - [05-Filesystem-Hierarchy](docs/02-Linux-Core-Concepts/05-Filesystem-Hierarchy.md)
   
-  
+- [03-Package-Mangement](docs/03-Package-Mangement)
 
-
-- [03-Package-Mangement](docs/04-Package-Mangement)
-
-  - [01-Package-Management-Distribution](docs/04-Package-Mangement/01-Package-Management-Distribution.md)
-  - [02-DPKG-AND-APT](docs/04-Package-Mangement/04-DPKG-AND-APT.md)
-  - [03-APT-vs-APT-GET](docs/04-Package-Mangement/05-APT-vs-APT-GET.md)
-  - [04-Lab-DPKG-AND-APT](docs/04-Package-Mangement/06-Lab-DPKG-AND-APT.md)
+  - [01-Package-Management-Distribution](docs/03-Package-Mangement/01-Package-Management-Distribution.md)
+  - [02-DPKG-AND-APT](docs/03-Package-Mangement/02-APT.md)
+  - [03-APT-vs-APT-GET](docs/03-Package-Mangement/03-APT-vs-APT-GET.md)
+  - [04-Lab-DPKG-AND-APT](docs/03-Package-Mangement/04-Lab-DPKG-AND-APT.md)
 
 
 - [04-Working-With-Shell-Part-II](docs/05-Working-With-Shell-Part-II)
