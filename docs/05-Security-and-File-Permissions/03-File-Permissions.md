@@ -1,7 +1,7 @@
 # LINUX FILE PERMISSIONS
 
  
-  - In this lecture we will learn about various file type identifiers.
+  - In this section we will learn about various file type identifiers.
   - We will also learn about various Linux file permissions that can be applied on the file or the directory.
 
     ![perm](../../images//perm.PNG)

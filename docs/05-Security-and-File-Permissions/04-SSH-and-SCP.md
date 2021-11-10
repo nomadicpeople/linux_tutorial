@@ -1,7 +1,7 @@
 # SSH and SCP
 
   
-  - In this lecture we will learn about SSH and SCP commands.
+  - In this section we will learn about SSH and SCP commands.
   - SSH is used to login to the remote computer.
   - SCP is used to copy of files/directories within the file system also can copy data to remote computer.
 

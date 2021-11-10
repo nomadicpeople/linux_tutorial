@@ -1,7 +1,7 @@
 # USER MANAGEMENT
 
   
-  - In this lecture we will learn how to create and manage user accounts in Linux.
+  - In this section we will learn how to create and manage user accounts in Linux.
 
   #### User Add
 

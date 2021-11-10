@@ -1,8 +1,6 @@
 # Switching & Routing 
 
-  - Take me to the [Tutorial](https://kodekloud.com/courses/873064/lectures/17074531)
-
-  #### Switching
+ #### Switching
 
   - Switching helps to connect the interface within same network.
 

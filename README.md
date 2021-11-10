@@ -35,23 +35,23 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [04-Vi-Editor](docs/04-Working-With-Shell-Part-II/04-Vi-Editor.md)
   - [05-Lab-VI-Editor](docs/04-Working-With-Shell-Part-II/05-Lab-VI-Editor.md)
 
-- [06-Security-and-File-Permissions](docs/06-Security-and-File-Permissions)
+- [05-Security-and-File-Permissions](docs/05-Security-and-File-Permissions)
 
-  - [01-Linux-Accounts](docs/06-Security-and-File-Permissions/02-Linux-Accounts.md)
-  - [02-User-Management](docs/06-Security-and-File-Permissions/03-User-Management.md)
-  - [03-File-Permissions](docs/06-Security-and-File-Permissions/05-File-Permissions.md)
-  - [04-SSH-and-SCP](docs/06-Security-and-File-Permissions/06-SSH-and-SCP.md)
-  - [05-Rsync](docs/06-Security-and-File-Permissions/07-Rsync.md)
-  - [06-Cronjob](docs/06-Security-and-File-Permissions/08-Cronjob.md)
+  - [01-Linux-Accounts](docs/05-Security-and-File-Permissions/01-Linux-Accounts.md)
+  - [02-User-Management](docs/05-Security-and-File-Permissions/02-User-Management.md)
+  - [03-File-Permissions](docs/05-Security-and-File-Permissions/03-File-Permissions.md)
+  - [04-SSH-and-SCP](docs/05-Security-and-File-Permissions/04-SSH-and-SCP.md)
+  - [05-Rsync](docs/05-Security-and-File-Permissions/05-Rsync.md)
+  - [06-Cronjob](docs/05-Security-and-File-Permissions/06-Cronjob.md)
   
 
 
-- [07-Networking](docs/07-Networking)
+- [06-Networking](docs/06-Networking)
 
-  - [01-DNS](docs/07-Networking/02-DNS.md)
-  - [02-Port](docs/07-Networking/01-Port.md)
-  - [03-Networking-Basics](docs/07-Networking/03-Networking-Basics.md)
-  - [04-Troubleshooting](docs/07-Networking/04-Troubleshooting.md)
+  - [01-DNS](docs/06-Networking/01-DNS.md)
+  - [02-Port](docs/06-Networking/02-Port.md)
+  - [03-Networking-Basics](docs/06-Networking/03-Networking-Basics.md)
+  - [04-Troubleshooting](docs/06-Networking/04-Troubleshooting.md)
 
 - [08-Storage-in-Linux](docs/08-Storage-in-Linux)
 
