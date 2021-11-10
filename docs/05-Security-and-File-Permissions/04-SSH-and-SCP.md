@@ -117,34 +117,7 @@ ssh tunnel.issai.nu.edu.kz -L 4040:remote_host1.issai.nu.edu.kz:5050
  ```
  
 To make the SSH tunnel work in the background, add the –f parameter
-# Windows (PuTTy)
-
-Install an SSH client such as PuTTy(https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-
-In this example we will use PuTTy to create an SSH tunnel to the following remote hosts. 
-```
-ssh tunnel.issai.nu.edu.kz -L 4040:remote_host1.issai.nu.edu.kz:5050
-```
-
-Where: 4040 is the local or Source port; remote_host1.encs.concordia.ca is the remote hostname; and 5050 is the remote port
-
-    1. Launch PuTTy 
-    2. In the Category pane of the PuTTY Configuration window, expand Connection then expand SSH and select Tunnels.
-    3. Under "Options controlling SSH port forwarding" enter the following:
-              1. Source Port: 4040
-              2. Destination: remote_host1.issai.nu.edu.kz:5050
-              3. Click the Add button
-              4. In the Category pane of the PuTTY Configuration window, click on Session
-              5. Under "Basic options for your PuTTy session" enter:
-                   Hostname: tunnel.issai.nu.edu.kz
-                   Port: 22
-                   Saved Sessions: SSH Tunnel to remote_host1
-                   Click Save
-                   Click Open
-              If you have not set up authorized_keys, then you will be prompted for your ISSAI password in order to establish the tunnel.
-              Do not close the PuTTy window
-              Repeat steps 3 and 4 to forward additional ports.
-
+# Tmux
 
   #### SCP
 
