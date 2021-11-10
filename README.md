@@ -13,10 +13,9 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [03-Command-Line-Help](docs/02-Working-With-Shell-Part-I/03-Command-Line-Help.md)
   - [04-Lab-Working-With-Shell](docs/02-Working-With-Shell-Part-I/04-lab-working-with-shell.md)
   - [05-Bash-Shell](docs/02-Working-With-Shell-Part-I/05-Bash-Shell.md)
-  - 
+
 - [02-Linux-Core-Concepts](docs/03-Linux-Core-Concepts)
 
-  - 
   - [01-The-Linux-Kernel](docs/03-Linux-Core-Concepts/02-The-Linux-Kernel.md)
   - [02-Working-With-Hardware](docs/03-Linux-Core-Concepts/03-Working-with-hardware.md)
   - [03-Lab-Linux-Kernel](docs/03-Linux-Core-Concepts/04-Lab-Linux-Kernel.md)
@@ -48,7 +47,7 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [02-User-Management](docs/06-Security-and-File-Permissions/03-User-Management.md)
   - [03-File-Permissions](docs/06-Security-and-File-Permissions/05-File-Permissions.md)
   - [04-SSH-and-SCP](docs/06-Security-and-File-Permissions/06-SSH-and-SCP.md)
-  - [05-Rsync(Windows/Cygwin)](docs/Security-and-File-Permissions/07-Rsync.md)
+  - [05-Rsync](docs/06-Security-and-File-Permissions/07-Rsync.md)
   - [06-Cronjob](docs/06-Security-and-File-Permissions/08-Cronjob.md)
   
 
