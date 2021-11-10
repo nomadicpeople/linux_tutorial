@@ -24,16 +24,16 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
 
   - [01-Package-Management-Distribution](docs/03-Package-Mangement/01-Package-Management-Distribution.md)
   - [02-APT](docs/03-Package-Mangement/02-APT.md)
-  - [03-Lab-DPKG-AND-APT](docs/03-Package-Mangement/03-Lab-APT.md)
+  - [03-Lab-APT](docs/03-Package-Mangement/03-Lab-APT.md)
 
 
-- [04-Working-With-Shell-Part-II](docs/05-Working-With-Shell-Part-II)
+- [04-Working-With-Shell-Part-II](docs/04-Working-With-Shell-Part-II)
 
-  - [01-File-Compression-and-Archival](docs/05-Working-With-Shell-Part-II/02-File-Compression-and-Archival.md)
-  - [02-Searching-For-Files-and-Patterns](docs/05-Working-With-Shell-Part-II/03-Searching-for-files-and-patterns.md)
-  - [03-IO-Redirection](docs/05-Working-With-Shell-Part-II/04-IO-Redirection.md)
-  - [04-Vi-Editor](docs/05-Working-With-Shell-Part-II/06-Vi-Editor.md)
-  - [05-Lab-VI-Editor](docs/05-Working-With-Shell-Part-II/07-Lab-VI-Editor.md)
+  - [01-File-Compression-and-Archival](docs/04-Working-With-Shell-Part-II/01-File-Compression-and-Archival.md)
+  - [02-Searching-For-Files-and-Patterns](docs/04-Working-With-Shell-Part-II/02-Searching-for-files-and-patterns.md)
+  - [03-IO-Redirection](docs/04-Working-With-Shell-Part-II/03-IO-Redirection.md)
+  - [04-Vi-Editor](docs/04-Working-With-Shell-Part-II/04-Vi-Editor.md)
+  - [05-Lab-VI-Editor](docs/04-Working-With-Shell-Part-II/05-Lab-VI-Editor.md)
 
 - [06-Security-and-File-Permissions](docs/06-Security-and-File-Permissions)
 
