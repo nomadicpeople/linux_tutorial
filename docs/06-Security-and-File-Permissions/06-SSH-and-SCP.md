@@ -143,7 +143,7 @@ Where: 4040 is the local or Source port; remote_host1.encs.concordia.ca is the r
                    Click Open
               If you have not set up authorized_keys, then you will be prompted for your ISSAI password in order to establish the tunnel.
               Do not close the PuTTy window
- Repeat steps 3 and 4 to forward additional ports.
+              Repeat steps 3 and 4 to forward additional ports.
 
 
   #### SCP
