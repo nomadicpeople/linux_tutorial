@@ -5,12 +5,12 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
 # Table of Contents
 
 
-- [01-Working-With-Shell-Part-I](docs/02-Working-With-Shell-Part-I)
+- [01-Working-With-Shell-Part-I](docs/01-Working-With-Shell-Part-I)
 
-  - [01-Introduction-to-Shell](docs/02-Working-With-Shell-Part-I/01-Introduction-to-Shell.md)
-  - [02-Basic-Commands](docs/02-Working-With-Shell-Part-I/02-Basic-Commands.md)
-  - [03-Command-Line-Help](docs/02-Working-With-Shell-Part-I/03-Command-Line-Help.md)
-  - [04-Bash-Shell](docs/02-Working-With-Shell-Part-I/04-Bash-Shell.md)
+  - [01-Introduction-to-Shell](docs/01-Working-With-Shell-Part-I/01-Introduction-to-Shell.md)
+  - [02-Basic-Commands](docs/01-Working-With-Shell-Part-I/02-Basic-Commands.md)
+  - [03-Command-Line-Help](docs/01-Working-With-Shell-Part-I/03-Command-Line-Help.md)
+  - [04-Bash-Shell](docs/01-Working-With-Shell-Part-I/04-Bash-Shell.md)
 
 - [02-Linux-Core-Concepts](docs/03-Linux-Core-Concepts)
 
