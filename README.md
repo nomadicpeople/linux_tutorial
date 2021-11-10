@@ -47,7 +47,7 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [02-User-Management](docs/06-Security-and-File-Permissions/03-User-Management.md)
   - [03-File-Permissions](docs/06-Security-and-File-Permissions/05-File-Permissions.md)
   - [04-SSH-and-SCP](docs/06-Security-and-File-Permissions/06-SSH-and-SCP.md)
-  - [05-Rsync(Windows/Cygwin)](docs/Security-and-File-Permissions/07-Rsync.md)
+  - [05-Rsync](docs/Security-and-File-Permissions/07-Rsync.md)
   - [06-Cronjob](docs/06-Security-and-File-Permissions/08-Cronjob.md)
   
 
