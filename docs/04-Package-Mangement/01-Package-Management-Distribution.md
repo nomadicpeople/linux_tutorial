@@ -1,6 +1,7 @@
 # Package Management Distribution
 
 
+
 In this section, we will take a look at the Linux Package Management tools used in different linux distribution
 - Will start with introduction to the package management.
 
