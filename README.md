@@ -53,8 +53,8 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [03-Networking-Basics](docs/06-Networking/03-Networking-Basics.md)
   - [04-Troubleshooting](docs/06-Networking/04-Troubleshooting.md)
 
-- [08-Storage-in-Linux](docs/08-Storage-in-Linux)
+- [07-Storage-in-Linux](docs/07-Storage-in-Linux)
 
-  - [01-Storage-Basics](docs/08-Storage-in-Linux/02-Storage-Basics.md)
-  - [02-File-System-in-Linux](docs/08-Storage-in-Linux/03-File-System-in-Linux.md)
+  - [01-Storage-Basics](docs/07-Storage-in-Linux/01-Storage-Basics.md)
+  - [02-File-System-in-Linux](docs/07-Storage-in-Linux/02-File-System-in-Linux.md)
   

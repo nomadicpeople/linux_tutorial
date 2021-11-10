@@ -1,8 +1,6 @@
 # DISK'S & PARTITIONS
 
-- Take me to the [Tutorial](https://kodekloud.com/courses/873064/lectures/17074601)
-
-- In this lecture we will learn about Disk Partitions. 
+- In this section we will learn about Disk Partitions. 
 - We will look at the File Systems such as EXT series and NFS.
 - External Storage Devices such as DAS,NAS, and SAN.
 - LVM in Action.
