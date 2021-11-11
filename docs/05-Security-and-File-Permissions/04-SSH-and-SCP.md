@@ -77,7 +77,7 @@
 
 ![Рисунок1](https://user-images.githubusercontent.com/73333051/141063533-927adc51-4135-4a92-af94-deffcc853c8d.png)
 
-# How to create an SSH Tunnel
+#### How to create an SSH Tunnel
 #### Linux and Mac OS
 
 To create a local port forward add the -L parameter to the ssh command line.
@@ -151,20 +151,20 @@ You can now run your first Tmux command. For example, to get a list of all comma
 ```
 Ctrl+b ?
 ```
-# Creating Named Tmux Sessions
+#### Creating Named Tmux Sessions
 By default, Tmux sessions are named numerically. Named sessions are useful when you run multiple Tmux sessions. To create a new named session, run the tmux command with the following arguments:
 ```
 tmux new -s session_name
 ```
 It’s always a good idea to choose a descriptive session name.
-# Detaching from Tmux Session
+#### Detaching from Tmux Session
 You can detach from the Tmux session and return to your normal shell by typing:
 ```
 Ctrl+b d
 ```
 The program running in the Tmux session will continue to run after you detach from the session.
 
-# Re-attaching to Tmux Session
+#### Re-attaching to Tmux Session
 To attach to a session first, you need to find the name of the session. To get a list of the currently running sessions type:
 ```
 tmux ls
@@ -180,7 +180,7 @@ For example, to attach to session 0, you would type:
 ```
 tmux attach-session -t 0
 ```
-# Working with Tmux Windows and Panes
+#### Working with Tmux Windows and Panes
 
 When you start a new Tmux session, by default, it creates a single window with a shell in it.
 
@@ -208,7 +208,7 @@ Below are some most common commands for managing Tmux windows and panes:
 
 - ```Ctrl+b x``` Close the current pane
 
-# Basic Tmux Usage
+#### Basic Tmux Usage
 
 Below are the most basic steps for getting started with Tmux:
 
