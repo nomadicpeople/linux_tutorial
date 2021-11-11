@@ -20,6 +20,6 @@
 ```
 - Copying files and then deleting them on a remote server:
 ```
-  rsync -av --delete -e 'ssh -p 22' /cygdrive/c/Users/Username/Desktop/Folder/ username@127.0.0.1:/raid/username/folder/
+rsync -av --delete -e 'ssh -p 22' /cygdrive/c/Users/Username/Desktop/Folder/ username@127.0.0.1:/raid/username/folder/
 ```
 
