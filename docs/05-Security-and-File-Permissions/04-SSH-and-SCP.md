@@ -181,24 +181,43 @@ For example, to attach to session 0, you would type:
 tmux attach-session -t 0
 ```
 # Working with Tmux Windows and Panes
+
 When you start a new Tmux session, by default, it creates a single window with a shell in it.
+
 To create a new window with shell type ```Ctrl+b c```, the first available number from the range 0...9 will be assigned to it.
+
 A list of all windows is shown on the status line at the bottom of the screen.
 
 Below are some most common commands for managing Tmux windows and panes:
 
-```Ctrl+b c```Create a new window (with shell)
-```Ctrl+b w``` Choose window from a list
-```Ctrl+b 0 ```Switch to window 0 (by number )
-```Ctrl+b ,``` Rename the current window
-```Ctrl+b %``` Split current pane horizontally into two panes
-```Ctrl+b "```Split current pane vertically into two panes
-```Ctrl+b o```Go to the next pane
-```Ctrl+b ;``` Toggle between the current and previous pane
-```Ctrl+b x``` Close the current pane
+- ```Ctrl+b c```Create a new window (with shell)
 
+- ```Ctrl+b w``` Choose window from a list
 
-  #### SCP
+- ```Ctrl+b 0 ```Switch to window 0 (by number )
+
+- ```Ctrl+b ,``` Rename the current window
+
+- ```Ctrl+b %``` Split current pane horizontally into two panes
+
+- ```Ctrl+b "```Split current pane vertically into two panes
+
+- ```Ctrl+b o```Go to the next pane
+
+- ```Ctrl+b ;``` Toggle between the current and previous pane
+
+- ```Ctrl+b x``` Close the current pane
+
+# Basic Tmux Usage
+
+Below are the most basic steps for getting started with Tmux:
+
+01. On the command prompt, type tmux new -s my_session,
+02. Run the desired program.
+03. Use the key sequence Ctrl-b + d to detach from the session.
+04. Reattach to the Tmux session by typing tmux attach-session -t my_session.
+
+  # SCP
 
    - To copy a compresses file to a remote server
 
