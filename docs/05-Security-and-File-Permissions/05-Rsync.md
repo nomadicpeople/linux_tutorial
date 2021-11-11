@@ -2,6 +2,11 @@
 
 - Rsync is a utility for efficiently transferring and synchronizing files between a computer and a storage drive and across networked computers by comparing the modification times and sizes of files. It is commonly found on Unix-like operating systems and is under the GPL-3.0-or-later license
 
+
+![rsync-remote-servers-without-password](https://user-images.githubusercontent.com/73333051/141232029-4c7ab238-402a-4245-a162-69734297ddc1.jpg)
+
+
+
 - To connect to the server remotely, create an ssh tunnel:
 
 ```
