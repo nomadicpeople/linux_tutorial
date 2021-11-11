@@ -42,7 +42,7 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [03-File-Permissions](docs/05-Security-and-File-Permissions/03-File-Permissions.md)
   - [04-SSH-and-SCP](docs/05-Security-and-File-Permissions/04-SSH-and-SCP.md)
   - [05-Rsync](docs/05-Security-and-File-Permissions/05-Rsync.md)
-  - [06-Rsync](docs/05-Security-and-File-Permissions/05-Rsync.md)
+  - [06-Remote coding](docs/05-Security-and-File-Permissions/05-Rsync.md)
   - [07-Cronjob](docs/05-Security-and-File-Permissions/06-Cronjob.md)
   
 
