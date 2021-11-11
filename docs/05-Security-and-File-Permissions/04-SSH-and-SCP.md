@@ -213,9 +213,12 @@ Below are some most common commands for managing Tmux windows and panes:
 Below are the most basic steps for getting started with Tmux:
 
 01. On the command prompt, type tmux new -s my_session,
-02. Run the desired program.
-03. Use the key sequence Ctrl-b + d to detach from the session.
-04. Reattach to the Tmux session by typing tmux attach-session -t my_session.
+2. 
+3. Run the desired program.
+4. 
+5. Use the key sequence Ctrl-b + d to detach from the session.
+6. 
+7. Reattach to the Tmux session by typing tmux attach-session -t my_session.
 
   # SCP
 
