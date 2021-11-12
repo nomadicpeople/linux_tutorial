@@ -71,23 +71,3 @@ Packages you may want to install include:
 
 Please note sometimes you may get a download incomplete and the setup application will return to step 8. Simply select another server and continue the installation process.
 
-
-10. Once the installation is complete, click Finish and continue with the Setup section.
-DO NOT RESTART AT THIS TIME!
-
-
-#### Setup Notes:
-
-1. Setup Windows Environment Variables:
-  - Open your System Control Panel:
-    Select [start]->Control Panel->System
-    
-
-![ControlPanel](https://user-images.githubusercontent.com/73333051/141403239-027120c8-68ff-4595-872f-4ce651540477.gif)
-
-
- - Click on "Advanced System Settings", then select "Environmental Variables" under the "Advanced" tab of the "System Properties" Control Panel.
-
-
-![System](https://user-images.githubusercontent.com/73333051/141403288-3ef0887c-2106-4618-b0d8-dadd6ace871d.gif)
-
