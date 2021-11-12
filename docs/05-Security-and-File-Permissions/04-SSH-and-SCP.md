@@ -42,26 +42,27 @@ It can be obtained from: www.cygwin.com
 
 9. Select the packages you want to install and click next.
 Packages you may want to install include:
-opennssh
-bc
-python
-keychain (for ssh key pairs)
-gv
-ghostscript
-emacs
-vi
-grace
-tcsh
-gnu compilers
-tetex
-aspell
-xfig
-transfig
-ImageMagic
-gnuplot
-rsync
-tmux
-xinit
+
+- opennssh
+- bc
+- python
+- keychain (for ssh key pairs)
+-gv
+- ghostscript
+-emacs
+- vi
+- grace
+- tcsh
+- gnu compilers
+- tetex
+- aspell
+- xfig
+- transfig
+- ImageMagic
+- gnuplot
+- rsync
+- tmux
+- xinit
 (important for installing X-server)
 
 
