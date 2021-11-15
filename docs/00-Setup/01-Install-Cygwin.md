@@ -1,6 +1,10 @@
-# HOWTO install Cygwin
-In this section we will learn how to setup Cygwin on a Windows machine/
+# Cygwin
+In this section we will learn how to setup Cygwin on a Windows machine.
+
 Cygwin is an open-source Unix-like environment for Windows.
+Note, it is NOT a way to run native Linux apps on Windows.
+
+For the purposes of this guide book, we will use Cygwin to connect to remote servers via SSH
 
 #### Installation Notes:
 1. Download setup.exe   from www.cygwin.com.
@@ -68,3 +72,4 @@ Packages you may want to install include:
 
 
 Please note sometimes you may get a download incomplete and the setup application will return to step 8. Simply select another server and continue the installation process.
+
