@@ -88,7 +88,7 @@
  ```
  ssh username@tunnel.issai.nu.edu.kz -N -f -L 4040:remote_host.issai.nu.edu.kz:5050
  ```
- - Will create an ssh tunnel to port 5050 on the remote system "remote_host.encs.concordia.ca" which you can access on your local system at "localhost:4040".
+ - Will create an ssh tunnel to port 5050 on the remote system "remote_host.issai.nu.edu.kz" which you can access on your local system at "localhost:4040".
 
  - The above example uses option "-N"  (do not execute remote command) to create a noninteractive ssh connection and option "-f" to request ssh to go to the background once the ssh connection has been established.  
 
