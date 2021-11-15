@@ -1,8 +1,6 @@
 # HOWTO install Cygwin
-
-Cygwin is a Unix-like environment for windows.
-It can be obtained from: www.cygwin.com
-
+In this section we will learn how to setup Cygwin on a Windows machine/
+Cygwin is an open-source Unix-like environment for Windows.
 
 #### Installation Notes:
 1. Download setup.exe   from www.cygwin.com.
