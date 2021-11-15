@@ -4,6 +4,8 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
 
 # Table of Contents
 
+- [00-Setup](docs/00-Setup)
+ -[01-Install-Cygwin](docs/00-Setup/01-Install-Cygwin.md)
 
 - [01-Working-With-Shell-Part-I](docs/01-Working-With-Shell-Part-I)
 
@@ -60,3 +62,7 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [01-Storage-Basics](docs/07-Storage-in-Linux/01-Storage-Basics.md)
   - [02-File-System-in-Linux](docs/07-Storage-in-Linux/02-File-System-in-Linux.md)
   
+- [08-Remote-Work](docs/08-Remote-Work)
+  - [01-Tmux](01-Tmux.md)
+  - [02-Remote-Interpreter-Pycharm](02-Remote-Interpreter-Pycharm.md)
+
