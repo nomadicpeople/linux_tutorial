@@ -120,13 +120,13 @@
  
    # SCP
 
-    - To copy a compresses file to a remote server
+   - To copy a compresses file to a remote server
 
       ```
       bob@caleston-lp10 ~]$ scp /home/bob/caleston-code.tar.gz devapp01:/home/bob
       ```
 
-    - To copy a directory to a remote server
+   - To copy a directory to a remote server
 
       ```
       [bob@caleston-lp10 ~]$ scp –pr /home/bob/media/ devapp01:/home/bob
