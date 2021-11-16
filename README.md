@@ -3,12 +3,15 @@
 Most of the content provided below is adapted from the notes for [Linux Basics Course](https://github.com/kodekloudhub/linux-basics-course) hosted on KodeKloud. We refer you to their Github repository if you would like to explore the full version of the course.
 
 ### How to use this guidebook?
+There are 9 chapters in total. If you are a beginner with 
 
 Linux users: proceed to Chapter 1.
 
-Windows users: start with Chapter 0 to setup the Windows Subsystem for Linux. Launch WSL on your machine and proceed with the terminal.
+Windows users: start with Chapter 0 to setup the Windows Subsystem for Linux. Launch WSL on your machine and proceed with the provided terminal.
 
 Mac users: 
+
+Chapter 1 and 4 provide the most common commands. Select a section based on the topic 
 
 # Table of Contents
 
@@ -56,7 +59,6 @@ Mac users:
   - [07-Remote coding](docs/05-Security-and-File-Permissions/05-Rsync.md)
   - [08-Cronjob](docs/05-Security-and-File-Permissions/06-Cronjob.md)
   
-
 
 - [06-Networking](docs/06-Networking)
 
