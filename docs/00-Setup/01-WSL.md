@@ -1,7 +1,7 @@
 # Windows Subsystem for Linux (WSL)
 
 - In this section we introduce WSL and the installation process.
-- We strongly recommend WSL if you want to learn Linux and/or perform remote work with Linux servers.
+- We strongly recommend WSL if you own an Windows machine and want to learn Linux and/or perform remote work with Linux servers.
 - The following chapters of this guidebook assume that WSL is installed on your Windows machine.
 
 
