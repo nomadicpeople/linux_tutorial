@@ -65,6 +65,6 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
   - [02-File-System-in-Linux](docs/07-Storage-in-Linux/02-File-System-in-Linux.md)
   
 - [08-Remote-Work](docs/08-Remote-Work)
-  - [01-Tmux](01-Tmux.md)
+  - [01-Tmux](docs/08-Remote-Work/01-Tmux.md)
   - [02-Remote-Interpreter-Pycharm](02-Remote-Interpreter-Pycharm.md)
 
