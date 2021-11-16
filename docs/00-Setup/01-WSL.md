@@ -26,6 +26,8 @@ WSL was first introduced in 2017 by Microsoft, and since then upgraded to the se
 - increased file system performance.
 - support full system call compatibility.
 
+However, if you DO NOT plan to do heavy development on your machine, the first version is sufficient. At ISSAI we recommend installing the first version with the following instructions.
+
 ### Install WSL
 #### Prerequisites
  - You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11.
