@@ -6,9 +6,7 @@ These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on
 
 - [00-Setup](docs/00-Setup)
   
-  - [01-Install-Cygwin](docs/00-Setup/01-Install-Cygwin.md)
-  
-  - [02-Install-WSl2](docs/00-Setup/01-WSL2.md)
+  - [01-Install-WSL](docs/00-Setup/01-WSL2.md)
 
 - [01-Working-With-Shell-Part-I](docs/01-Working-With-Shell-Part-I)
 
