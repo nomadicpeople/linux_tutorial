@@ -1,6 +1,6 @@
-# The Linux Basics Course
+# The ISSAI Guidebook on Basics of Linux and Networking
 
-These are notes from the [Linux Basics Course](https://bit.ly/3gGnxm0) hosted on KodeKloud.
+Most of the content provided below is adapted from the notes for [Linux Basics Course](https://github.com/kodekloudhub/linux-basics-course) hosted on KodeKloud. We refer you to their Github repository if you would like to explore the full version of the course.
 
 # Table of Contents
 
