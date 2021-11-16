@@ -6,7 +6,9 @@ Most of the content provided below is adapted from the notes for [Linux Basics C
 There are 9 chapters in total. The compiled material represents the necessary package of knowledge required for an HCP practioner. 
 We recommend to go through the sections in the incremetal order, one by one. We
 
-If you own a Windows machine, please start with chapter 0 to install Windows Sybstem for Linux. If you are a Linux user, proceed to chapter 1. If you have a Mac, ...... 
+- If you own a Windows machine, please start with chapter 0 to install Windows Sybstem for Linux (WSL), and then launch WSL terminal and proceed with Chapter 1. 
+- If you are a Linux user, begin with chapter 1. 
+- If you have a Mac, use the default terminal. Remember that Mac OS is Unix based, therefore it supports all standard UNIX commands. In practice most common LINUX commands are suitable for Mac. But if you have access to a remote Linux server/machine, please connect to it and then proceed with chapter 1.
 
 # Table of Contents
 
