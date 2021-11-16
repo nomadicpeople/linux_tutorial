@@ -26,9 +26,8 @@ WSL was first introduced in 2017 by Microsoft, and since then upgraded to the se
 - increased file system performance.
 - support full system call compatibility.
 
-However, if you DO NOT plan to do heavy development on your machine, the first version is sufficient. At ISSAI we recommend installing the first version with the following instructions.
 
-### Install WSL
+### Install WSL on Windows 10/11
 #### Prerequisites
  - You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11.
 #### Note
@@ -46,6 +45,11 @@ wsl --install
 This command will enable the required optional components, download the latest Linux kernel, set WSL 2 as your default, and install a Linux distribution for you (Ubuntu by default, see below to change this).
 
 The first time you launch a newly installed Linux distribution, a console window will open and you'll be asked to wait for files to de-compress and be stored on your machine. All future launches should take less than a second.
+
+Now to activate WSL2 run 
+```
+wsl --set-default-version 2
+```
 
 #### Change the default Linux distribution installed
 We recommend you to install Ubuntu, the default Linux distribution for WSL.
@@ -67,5 +71,8 @@ or
 
 ```
 wsl -l -o.
-```
 
+```
+### Manual installation steps for older versions of WSL
+
+If you have an older version of Windows, we refer you to [these](https://docs.microsoft.com/en-us/windows/wsl/install-manual) instructions from Microsoft.
