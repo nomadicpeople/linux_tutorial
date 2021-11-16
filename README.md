@@ -2,6 +2,14 @@
 
 Most of the content provided below is adapted from the notes for [Linux Basics Course](https://github.com/kodekloudhub/linux-basics-course) hosted on KodeKloud. We refer you to their Github repository if you would like to explore the full version of the course.
 
+### How to use this guidebook?
+
+Linux users: proceed to Chapter 1.
+
+Windows users: start with Chapter 0 to setup the Windows Subsystem for Linux. Launch WSL on your machine and proceed with the terminal.
+
+Mac users: 
+
 # Table of Contents
 
 - [00-Setup](docs/00-Setup)
