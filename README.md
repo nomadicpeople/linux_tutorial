@@ -3,21 +3,16 @@
 Most of the content provided below is adapted from the notes for [Linux Basics Course](https://github.com/kodekloudhub/linux-basics-course) hosted on KodeKloud. We refer you to their Github repository if you would like to explore the full version of the course.
 
 ### How to use this guidebook?
-There are 9 chapters in total. If you are a beginner with 
+There are 9 chapters in total. The compiled material represents the necessary package of knowledge required for an HCP practioner. 
+We recommend to go through the sections in the incremetal order, one by one. We
 
-Linux users: proceed to Chapter 1.
-
-Windows users: start with Chapter 0 to setup the Windows Subsystem for Linux. Launch WSL on your machine and proceed with the provided terminal.
-
-Mac users: 
-
-Chapter 1 and 4 provide the most common commands. Select a section based on the topic 
+If you own a Windows machine, please start with chapter 0 to install Windows Sybstem for Linux. If you are a Linux user, proceed to chapter 1. If you have a Mac, ...... 
 
 # Table of Contents
 
 - [00-Setup](docs/00-Setup)
   
-  - [01-Install-WSL](docs/00-Setup/01-WSL2.md)
+  - [01-Install-WSL](docs/00-Setup/01-WSL.md)
 
 - [01-Working-With-Shell-Part-I](docs/01-Working-With-Shell-Part-I)
 
