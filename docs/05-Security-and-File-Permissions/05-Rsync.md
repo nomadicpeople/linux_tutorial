@@ -1,8 +1,10 @@
 # Rsync
 
-- In this section we will learn about how to effiently transfer data between remote machines.
+- In this section we will learn about how to effiently transfer data between remotely connected machines.
 
 Rsync, which stands for "remote sync", is a tool for efficiently transferring and synchronizing files between two locations over a remote shell. It uses the delta-transfer algorithm to transfer only the differences between the source and the destination, thus minimizing the amount of data to be copied.
+
+**Rsync also only copies a file if the target file is different than the source file. This works recursively through directories.**
 
 Rsync is widely used for backups and mirroring and as an improved copy command for everyday use (a replacement for scp , sftp , and cp commands).
 
@@ -77,10 +79,11 @@ The opposite operation is “pull”. It is used to sync a remote directory to t
 rsync -a username@remote_host:/home/username/dir1 place_to_sync_on_local_machine
 ```
 
-#### Rsync vs SCP
+
 
 Sources:
 1. https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/
 2. https://linux.die.net/man/1/rsync
 3. https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories
 4. https://stackoverflow.com/questions/20244585/how-does-scp-differ-from-rsync
+5. https://fedoramagazine.org/scp-users-migration-guide-to-rsync/
