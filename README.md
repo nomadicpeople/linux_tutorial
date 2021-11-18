@@ -14,7 +14,9 @@ We recommend to go through the sections in the incremetal order, one by one. We
 
 - [00-Setup](docs/00-Setup)
   
-  - [01-Install-WSL](docs/00-Setup/01-WSL.md)
+  - [01-Setup-Windows](docs/00-Setup/01-Windows.md)
+  - [02-Setup-macOS](docs/00-Setup/02-macOS.md)
+  - [03-Setup-Linux](docs/00-Setup/03-Linux.md)
 
 - [01-Working-With-Shell-Part-I](docs/01-Working-With-Shell-Part-I)
 
