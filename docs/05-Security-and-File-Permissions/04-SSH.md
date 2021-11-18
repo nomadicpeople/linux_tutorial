@@ -104,15 +104,4 @@
  - If you have not set up authorized_keys, then you will be prompted for your password in order to establish the tunnel.
  - If you used the "-N" and "-f" options above, remember to kill your ssh tunnel once you're finished using it (see the "ps" and "kill" manpages for information on how to find and kill your ssh tunnel process).
  Otherwise, in the absence of those options, an interactive session was established in addition to the port forwardings; in that case, you must leave that interactive session active until you're finished using the tunnel, as exiting the interactive session will also tear down the tunnel.
- # Windows(PowerShell commandline)
-
- To create an SSH tunnel using the built-in Windows 10 SSH client (is a part of Windows starting from Windows 10 1809 and Windows Server 2019), run this command:
- ```
- ssh tunnel.issai.nu.edu.kz -L 4040:remote_host1.issai.nu.edu.kz:5050
- ```
- ```
-  ssh -L local_port:remote_ip:remote_port username@issai_gateway -p port
-  ```
-
- To make the SSH tunnel work in the background, add the –f parameter
  
