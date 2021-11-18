@@ -1,9 +1,7 @@
-# SSH and SCP
-
+# SSH 
 
    - In this section we will learn about SSH and SCP commands.
    - SSH is used to login to the remote computer.
-   - SCP is used to copy of files/directories within the file system also can copy data to remote computer.
 
    #### SSH
 
@@ -118,18 +116,3 @@
 
  To make the SSH tunnel work in the background, add the –f parameter
  
-   # SCP
-
-   - To copy a compresses file to a remote server
-
-      ```
-      bob@caleston-lp10 ~]$ scp /home/bob/caleston-code.tar.gz devapp01:/home/bob
-      ```
-
-   - To copy a directory to a remote server
-
-      ```
-      [bob@caleston-lp10 ~]$ scp –pr /home/bob/media/ devapp01:/home/bob
-      ```
-
-      ![scp](../../images//scp.PNG)
