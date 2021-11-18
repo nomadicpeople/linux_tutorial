@@ -2,6 +2,8 @@
 
 - In this section we will learn about how to effiently transfer data between remotely connected machines.
 
+As part of the 8.0 pre-release announcement, the OpenSSH project stated that they consider the **scp protocol outdated, inflexible, and not readily fixed**. They then go on to recommend the use of sftp or **rsync** for file transfer instead.
+
 Rsync, which stands for "remote sync", is a tool for efficiently transferring and synchronizing files between two locations over a remote shell. It uses the delta-transfer algorithm to transfer only the differences between the source and the destination, thus minimizing the amount of data to be copied.
 
 **Rsync also only copies a file if the target file is different than the source file. This works recursively through directories.**
