@@ -1,8 +1,6 @@
 # DNS
 
- 
-
-  - The domain name system is a distributed way to share these name-to-IP associations instead of requiring each computer to synchronize a hosts file. A name server publishes the IP address for a domain and provides a single location to update when an IP changes.
+ Domain Name Service (DNS) is an Internet service that maps IP addresses and fully qualified domain names (FQDN) to one another. In this way, DNS alleviates the need to remember IP addresses. Computers that run DNS are called name servers. Ubuntu ships with BIND (Berkley Internet Naming Daemon), the most common program used for maintaining a name server on Linux.
 
   
   #### Ping 
@@ -125,3 +123,5 @@
   ```
 
 
+References:
+https://ubuntu.com/server/docs/service-domain-name-service-dns
