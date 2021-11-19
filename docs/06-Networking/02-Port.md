@@ -6,8 +6,10 @@
  
  A port in computer networking is a virtual point where network connections start and end. With the use of ports, a computer can use a single physical network connection to handle many incoming and outgoing requests by assigning a port number to each. The numbers go from 0 to 65535, which is a 16-bit number. 
  
- Some of these port numbers are specifically defined and always associated with a specific type of service -- for example, File Transfer Protocol (FTP) is always port number 21 and Hypertext Transfer Protocol web traffic is always port 80. As the result, ports allow computers to easily differentiate between different kinds of traffic: emails go to a different port than webpages, for instance, even though both reach a computer over the same Internet connection.
+ Some of these port numbers are specifically defined and always associated with a specific type of service -- for example, File Transfer Protocol (FTP) is always port number 21 and Hypertext Transfer Protocol web traffic is always port 80. As the result, ports allow computers to easily differentiate between different kinds of traffic: emails go to a different port than webpages, for instance, even though both reach a computer over the same Internet connection. 
  
+ In general, port numbers lower than 1024 identify the historically most commonly used services and are called the well-known port numbers. Higher-numbered ports are available for general use by applications and are known as ephemeral ports.
+
 #### Notable welll-known numbers
 Number  | Assignment
 ------------- | -------------
@@ -26,14 +28,13 @@ Number  | Assignment
 194  | INternet Relay Chat (ICR)
 443  | HTTP Secure (HTTPS) HTTP over TLS/SSL
  
-  A port number is always associated with an IP address of a host **clarify what a host means** and the type of transport protocol used for communication. It completes the destination or origination network address of a message. Specific port numbers are reserved to identify specific services so that an arriving packet can be easily forwarded to a running application. For this purpose, port numbers lower than 1024 identify the historically most commonly used services and are called the well-known port numbers. Higher-numbered ports are available for general use by applications and are known as ephemeral ports.
+A port is always associated with a protocol, such as Transmission Control Protocol(TCP) or User Datagram Protocol(UDP). The port is specified by having the URL or IP address followed by a colon then the port number -- as examples, 10.0.0.1:80 or https://issai.nu.edu.kz:443. With all internet communication, there is always an associated port, but it may not be shown to the user as it is often implied by the type of communication.
 
- Ports provide a multiplexing **what does this word mean?** service for multiple services or multiple communication sessions at one network address. In the client–server model of application architecture, multiple simultaneous communication sessions may be initiated for the same service.
+A computer can manage many simultaneous connections on a single inbound port. This is because the local IP address, local port, remote IP address and remote port specify each connection. A listening port is when the computer is actively waiting for inbound requests on that port number, allowing those connections. Port forwarding is when communication to one address on a specific port is then sent, or forwarded, to another computer for processing.
 
-<>A port number is a 16-bit unsigned integer, thus ranging from 0 to 65535. For TCP, port number 0 is reserved and cannot be used, while for UDP, the source port is optional and a value of zero means no port. A process associates its input or output channels via an internet socket, which is a type of file descriptor, associated with a transport protocol, an IP address, and a port number. This is known as binding. 
-
-A socket is used by a process to send and receive data via the network. The operating system's networking software has the task of transmitting outgoing data from all application ports onto the network, and forwarding arriving network packets to processes by matching the packet's IP address and port number to a socket. For TCP, only one process may bind to a specific IP address and port combination. Common application failures, sometimes called port conflicts, occur when multiple programs attempt to use the same port number on the same IP address with the same protocol.
  
-Citations:
+References:
 1. https://www.techtarget.com/searchnetworking/definition/port
 2. https://en.wikipedia.org/wiki/Port_(computer_networking)
+3. https://www.cloudflare.com/en-ca/learning/network-layer/what-is-a-computer-port/
+4. https://opensource.com/article/18/10/common-network-ports
