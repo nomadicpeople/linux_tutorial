@@ -32,6 +32,14 @@ A port is always associated with a protocol, such as Transmission Control Protoc
 
 A computer can manage many simultaneous connections on a single inbound port. This is because the local IP address, local port, remote IP address and remote port specify each connection. A listening port is when the computer is actively waiting for inbound requests on that port number, allowing those connections. Port forwarding is when communication to one address on a specific port is then sent, or forwarded, to another computer for processing.
 
+#### Some title goes here
+Suppose you are trying to pass an ssh tunnel from your local machine **A** to a remote server **B** with IP **remote_IP** that is not open to your network, So you use a another remote server  **C** with IP **reachable_IP** that is reachable for you and belongs to the same network as the **B**. Here is the command
+
+**ssh username@reachable_IP -N -f -L local_port:remote_IP:remote_port
+**
+
+**local_port** is the networking port on your machine **A**, that you want to connect with **remote_port**, the port on **B**. 
+In the previous section we discussed the usage of networking ports. That they belong to a specific task. However, we you dont use a well-known port number, you have to specify the port number yourself first.
  
 References:
 1. https://www.techtarget.com/searchnetworking/definition/port
