@@ -6,7 +6,7 @@
       - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
       - provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.
 
-   #### SSH
+   #### Connect to a remote server via ssh
 
    - To login to the remote server use **`ssh`** command with hostname or IP address.
 
@@ -20,7 +20,7 @@
      ssh <user>@<hostname OR IP Address>
      ```
 
-     **`-l`** attribute can also be used as 
+     **`-l`** stands for login_name, specifies the user to log in as on the remote machine. 
 
      ```
      ssh –l <user> <hostname OR IP Address>
@@ -28,7 +28,7 @@
 
    #### Password-Less Authentication
 
-   - Passwordless authentication can be setup via key-pair authentication in order to login to the remote server with password.
+   - Passwordless authentication can be setup via key-pair authentication.
 
    - Public and Private key are stored at below location.
 
