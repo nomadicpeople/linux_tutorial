@@ -1,7 +1,10 @@
 # SSH 
 
-   - In this section we will learn about SSH.
-   - SSH is used to login to the remote computer.
+   - In this section we will learn about SSH, provided by the OpenSSH project.
+   - OpenSSH:
+      - is the premier connectivity tool for remote login with the SSH protocol. 
+      - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
+      - provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.
 
    #### SSH
 
@@ -69,3 +72,7 @@
      ```
 
      ![auth](../../images//auth.PNG)
+     
+References:
+1. https://www.openssh.com
+2. 
