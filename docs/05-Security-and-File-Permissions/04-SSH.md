@@ -5,7 +5,7 @@
       - is the premier connectivity tool for remote login with the SSH protocol. 
       - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
       - provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.
-
+   
    #### Connect to a remote server via ssh
 
    - To login to the remote server use **`ssh`** command with hostname or IP address.
@@ -13,7 +13,8 @@
      ```
      ssh <hostname OR IP Address>
      ```
-
+     Explain what IP address is 
+     
    - To login to the remote server with specific username and password.
 
      ```
@@ -23,9 +24,16 @@
      **`-l`** stands for login_name, specifies the user to log in as on the remote machine. 
 
      ```
-     ssh –l <user> <hostname OR IP Address>
+     ssh –l <user>@<hostname OR IP Address>
      ```
-
+     
+     **`-p`** stands for login_name, specifies the user to log in as on the remote machine.       
+     ```
+     ssh -p port_number <user>@<hostname OR IP Address>
+     ```
+     Explain what port is.
+     
+   
    #### Password-Less Authentication
 
    - Passwordless authentication can be setup via key-pair authentication.
@@ -33,46 +41,39 @@
    - Public and Private key are stored at below location.
 
      ```
-     Public Key: /home/bob/.ssh/id_rsa.pub
+     Public Key: ~/.ssh/id_rsa.pub
      ```
+   
+     ```
+     Private Key: ~/.ssh/id_rsa
+     ```
+     where **`~`** stands for the home directory
+     
+   - To generate a keypair run this command
 
      ```
-     Private Key: /home/bob/.ssh/id_rsa
+     ssh-keygen –t rsa
      ```
-
-   - To generate a keypair on the **`Client`** run this command
-
-     ```
-     bob@caleston-lp10 ~]$ ssh-keygen –t rsa
-     ```
-
-     ![key](../../images//key.PNG)
-
+     add a screenshot
    - To copy the Public key from the client to the remote server
 
      ```
-     bob@caleston-lp10 ~]$ ssh-copy-id bob@devapp01
+     ssh-copy-id  <user>@<hostname OR IP Address>
      ```
+     add a screenshot
 
-     ![copy](../../images//copy.PNG)
-
-
-   - Now **`Bob`** can login to remote server without password
+   - Now you can login to remote server without password
 
      ```
-     [bob@caleston-lp10 ~]$ ssh devapp01
+     ssh <user>@<hostname OR IP Address>
      ```
-
-     ![pless](../../images//pless.PNG)
-
+     add a screenshot
    - Public Key is copied to the remote server at :
 
      ```
-     [bob@caleston-lp10 ~]$ cat /home/bob/.ssh/authorized_keys
+     cat ~/.ssh/authorized_keys
      ```
-
-     ![auth](../../images//auth.PNG)
-     
+     add a screenshot
 References:
 1. https://www.openssh.com
 2. 
