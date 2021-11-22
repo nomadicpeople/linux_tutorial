@@ -15,6 +15,7 @@ We recommend to go through the sections in the incremetal order, one by one. We
 - [00-Setup](docs/00-Setup)
   
   - [01-Setup-Windows](docs/00-Setup/01-Windows.md)
+  - [02-Remote-Connect](docs/00-Setup/02-Remote-Connect.md)
 
 - [01-Working-With-Shell-Part-I](docs/01-Working-With-Shell-Part-I)
 
