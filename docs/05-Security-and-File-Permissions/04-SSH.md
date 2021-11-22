@@ -9,11 +9,13 @@
    
    ## Connect to a remote server via ssh
 
-   - To login to the remote server use **`ssh`**.
+   - To login to the remote server use **`ssh`**, which starts the SSH client program on the local machine and establishes a secure connection to the remote SSH server.
+     
      ```
-     ssh <user_name>@<host_ip_address>
+     ssh <user_name>@<remote_ip_address>
      ```
-     Where **`<user_name>`** is your account name on the remote machine and **`<host_ip_address>`** is the IP address of the machine to which you would like to establish an SSH connection.
+     
+     Where **`<user_name>`** is your account name on the remote machine and **`<remote_ip_address>`** is the IP address of the machine to which you would like to establish an SSH connection.
      
      An IP address is a string of numbers separated by periods. It is unique and used to identify a device on the internet or a local network. IP stands for "Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network. The full IP addressing range goes from 0.0.0.0 to 255.255.255.255, for example 192.158.1.38.
      
@@ -26,27 +28,35 @@
      For more information on ports in computer networking take a look at section 2 of chapter 6 [02-Ports](https://github.com/nomadicpeople/linux_tutorial/blob/main/docs/06-Networking/02-Ports.md). 
      
    ## SSH tunneling
- - SSH tunneling, or SSH port forwarding, is a method of transporting arbitrary data over an encrypted SSH connection. SSH tunnels allow connections made to a local port (that is, to a port on your own desktop) to be forwarded to a remote machine via a secure channel.
- - To protect our network services, not all of them are reachable directly from outside the NU network. If you are offsite and need to access a resource that is protected in this way, you can use ssh to tunnel through an accessible resource to reach the protected resource. 
+ - Valuable network resources do not generally allow remote SSH access. This would be a severe limitation in a modern distributed environment. Organizations usually solve this issue by setting up an intermediary SSH ‘jump’ server to accept remote SSH connection
+   
+ - Your local SSH client establishes a connection with the remote SSH server. The connection is then forwarded to a resource within the trusted internal network. SSH connections are established, and security efforts can concentrate on the intermediary SSH server rather than individual resources in a network.
 
- ![Рисунок1](https://user-images.githubusercontent.com/73333051/141063533-927adc51-4135-4a92-af94-deffcc853c8d.png)
-
-
+ - To use SSH tunneling in Linux, you need to provide your client with the source and destination port numbers, as well as the location of the destination server. The location can either be an IP address or a hostname.
+ 
  To create a local port forward add the -L parameter to the ssh command line.
  ```
- ssh username@reachable_IP -N -f -L local_port:remote_IP:remote_port
+ ssh -L <local_port>:<destination_ip_address>:<destination_port> <user_name>@<remote_ip_address>
+ 
  ```
- For example, the command:
- ```
- ssh username@tunnel.issai.nu.edu.kz -N -f -L 4040:remote_host.issai.nu.edu.kz:5050
- ```
- - Will create an ssh tunnel to port 5050 on the remote system "remote_host.issai.nu.edu.kz" which you can access on your local system at "localhost:4040".
+ With **`-L local_port:destination_server_ip:remote_port`** The local port on the local client is being forwarded to the port of the destination remote server.
 
- - The above example uses option "-N"  (do not execute remote command) to create a noninteractive ssh connection and option "-f" to request ssh to go to the background once the ssh connection has been established.  
+Consider the figure below:
 
- #### Important:
+![Рисунок1](https://user-images.githubusercontent.com/73333051/141063533-927adc51-4135-4a92-af94-deffcc853c8d.png)
+
+
+You are establishing a connection between local port **`9999`** with the destination port  **`80`**.  **`localhost`** is the hostname of the destination machine. A hostname is an alternative to an IP address. Instead of a string of numbers, a machine is identified by a label that is unique within the network. 
+ **`instance`** is the hostname of the remote machine, that serves as a gateway server to access the destination.  **`user`** is your account name on instance. Note that we are using the default port  **`22`** on  **`instance`**. 
+
+#### Tips 
+- The above example uses option "-N"  (do not execute remote command) to create a noninteractive ssh connection and option "-f" to request ssh to go to the background once the ssh connection has been established.  
+
+ #### Troubleshooting:
  - Local and remote ports can match.
  - If you get the error "Address already in use", it probably means that your desktop is already using the local port you specified; try a different local port number.
+ - If you are within the local network of the destination server, then do not use tunneling. You can connect directly the destination machine. 
+ 
  - Additional "-L local_port:remote_IP:remote_port" clauses can be added to the ssh command, e.g.,
  ```
  ssh userfoo@issai.nu.edu.kz \
@@ -61,3 +71,5 @@
 References:
 1. https://www.openssh.com
 2. https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address
+3. https://phoenixnap.com/kb/ssh-port-forwarding
+4. 
