@@ -24,8 +24,18 @@
      ```
      ssh-keygen –t rsa
      ```
-     add a screenshot
      
+      - When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+      ```
+      > Enter a file in which to save the key (/Users/you/.ssh/id_algorithm): [Press enter]
+      ```
+      where **`/Users/you`** is the location of your home directory
+      
+      - At the prompt, type a secure passphrase or press Enter for an empty passphrase. For more information on passphrases we refer you to the Gihub post on ["Working with SSH key passphrases"](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
+      ```
+      > Enter passphrase (empty for no passphrase): [Type a passphrase]
+      > Enter same passphrase again: [Type passphrase again]
+      ```
    - As the result your public and private keys are stored at below location.
 
      ```
@@ -48,16 +58,14 @@
 
      ```
      ssh -p <port_number> <user>@<IP_address>
-     ```
-     add a screenshot
-   
+     ```   
    - The public Key is copied to the remote server at :
 
      ```
      cat ~/.ssh/authorized_keys
      ```
-     add a screenshot
 References:
 1. https://www.openssh.com
 2. https://github.com/kodekloudhub/linux-basics-course/blob/master/docs/06-Security-and-File-Permissions/06-SSH-and-SCP.md
+3. https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
