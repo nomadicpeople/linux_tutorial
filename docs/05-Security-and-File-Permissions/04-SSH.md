@@ -31,8 +31,6 @@
 
  ![Рисунок1](https://user-images.githubusercontent.com/73333051/141063533-927adc51-4135-4a92-af94-deffcc853c8d.png)
 
- #### How to create an SSH Tunnel
- #### Linux and Mac OS
 
  To create a local port forward add the -L parameter to the ssh command line.
  ```
@@ -57,9 +55,7 @@
    -L 3000:remote_host2.issai.nu.edu.kz:3000
    ```
 
- - If you have not set up authorized_keys, then you will be prompted for your password in order to establish the tunnel.
- - If you used the "-N" and "-f" options above, remember to kill your ssh tunnel once you're finished using it (see the "ps" and "kill" manpages for information on how to find and kill your ssh tunnel process).
- Otherwise, in the absence of those options, an interactive session was established in addition to the port forwardings; in that case, you must leave that interactive session active until you're finished using the tunnel, as exiting the interactive session will also tear down the tunnel.
+ - If you used the "-N" and "-f" options above, remember to kill your ssh tunnel once you're finished using it (see the "ps" and "kill" manpages for information on how to find and kill your ssh tunnel process). Otherwise, in the absence of those options, an interactive session was established in addition to the port forwardings; in that case, you must leave that interactive session active until you're finished using the tunnel, as exiting the interactive session will also tear down the tunnel.
  
 
 References:
