@@ -1,44 +1,32 @@
-# SSH 
+# Connecting to a remote server via SSH 
 
-   - In this section we will learn about SSH, provided by the OpenSSH project.
+   - In this section we will provide you with the basics of connecting to a remote machine using SSH by OpenSSH project
+   - We have an indepth version of this section, that explains every piece of the provided commands.
    - OpenSSH:
       - is the premier connectivity tool for remote login with the SSH protocol. 
       - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
       - provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.
    
-   #### Connect to a remote server via ssh
-
-   - To login to the remote server use **`ssh`** command with hostname or IP address.
-
-     ```
-     ssh <hostname OR IP Address>
-     ```
-     Explain what IP address is 
-     
+   #### Remote Connection
    - To login to the remote server with specific username and password.
-
-     ```
-     ssh <user>@<hostname OR IP Address>
-     ```
-
-     **`-l`** stands for login_name, specifies the user to log in as on the remote machine. 
-
-     ```
-     ssh –l <user>@<hostname OR IP Address>
-     ```
      
-     **`-p`** stands for login_name, specifies the user to log in as on the remote machine.       
+     **`-p`** is the option to specify the port number for establishing an ssh connection. If you are using the default port 22, then you don't need omit this option.
      ```
-     ssh -p port_number <user>@<hostname OR IP Address>
-     ```
-     Explain what port is.
-     
+     ssh -p <port_number> <user>@<IP_address>
+     ```     
    
    #### Password-Less Authentication
 
-   - Passwordless authentication can be setup via key-pair authentication.
+   - Its a good practice to switch to passwordless authentication, that can be setup via key-pair authentication.
+     
+   - To generate a keypair run this command
 
-   - Public and Private key are stored at below location.
+     ```
+     ssh-keygen –t rsa
+     ```
+     add a screenshot
+     
+   - As the result your public and private keys are stored at below location.
 
      ```
      Public Key: ~/.ssh/id_rsa.pub
@@ -49,26 +37,21 @@
      ```
      where **`~`** stands for the home directory
      
-   - To generate a keypair run this command
+   - Now, copy the public key from your machine to the remote server
 
      ```
-     ssh-keygen –t rsa
-     ```
-     add a screenshot
-   - To copy the Public key from the client to the remote server
-
-     ```
-     ssh-copy-id  <user>@<hostname OR IP Address>
+     ssh-copy-id  <user>@<IP_address>
      ```
      add a screenshot
 
    - Now you can login to remote server without password
 
      ```
-     ssh <user>@<hostname OR IP Address>
+     ssh -p <port_number> <user>@<IP_address>
      ```
      add a screenshot
-   - Public Key is copied to the remote server at :
+   
+   - The public Key is copied to the remote server at :
 
      ```
      cat ~/.ssh/authorized_keys
@@ -76,4 +59,5 @@
      add a screenshot
 References:
 1. https://www.openssh.com
-2. 
+2. https://github.com/kodekloudhub/linux-basics-course/blob/master/docs/06-Security-and-File-Permissions/06-SSH-and-SCP.md
+
