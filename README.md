@@ -32,7 +32,7 @@ We recommend to go through the sections in the incremetal order, one by one. We
   - [04-File-Types](docs/02-Linux-Core-Concepts/04-File-Types.md)
   - [05-Filesystem-Hierarchy](docs/02-Linux-Core-Concepts/05-Filesystem-Hierarchy.md)
   
-- [03-Package-Mangement](docs/03-Package-Mangement)
+- [03-Package-Management](docs/03-Package-Management)
 
   - [01-Package-Management-Distribution](docs/03-Package-Mangement/01-Package-Management-Distribution.md)
   - [02-APT](docs/03-Package-Mangement/02-APT.md)
