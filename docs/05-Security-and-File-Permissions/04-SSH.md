@@ -27,53 +27,13 @@
      ssh –l <user>@<hostname OR IP Address>
      ```
      
-     **`-p`** stands for login_name, specifies the user to log in as on the remote machine.       
+     By default you use port 22 to establish a connection via SSH, but you use a different one using the **`-p`** option.
      ```
      ssh -p port_number <user>@<hostname OR IP Address>
      ```
-     Explain what port is.
+     For more information on ports in computer networking take a look at section 2 of chapter 6 [02-Ports](https://github.com/nomadicpeople/linux_tutorial/blob/main/docs/06-Networking/02-Ports.md). 
      
    
-   #### Password-Less Authentication
-
-   - Passwordless authentication can be setup via key-pair authentication.
-
-   - Public and Private key are stored at below location.
-
-     ```
-     Public Key: ~/.ssh/id_rsa.pub
-     ```
-   
-     ```
-     Private Key: ~/.ssh/id_rsa
-     ```
-     where **`~`** stands for the home directory
-     
-   - To generate a keypair run this command
-
-     ```
-     ssh-keygen –t rsa
-     ```
-     add a screenshot
-   - To copy the Public key from the client to the remote server
-
-     ```
-     ssh-copy-id  <user>@<hostname OR IP Address>
-     ```
-     add a screenshot
-
-   - Now you can login to remote server without password
-
-     ```
-     ssh <user>@<hostname OR IP Address>
-     ```
-     add a screenshot
-   - Public Key is copied to the remote server at :
-
-     ```
-     cat ~/.ssh/authorized_keys
-     ```
-     add a screenshot
 References:
 1. https://www.openssh.com
 2. 
