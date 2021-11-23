@@ -57,13 +57,6 @@ We recommend to go through the sections in the incremetal order, one by one. We
   - [06-Cronjob](docs/05-Security-and-File-Permissions/06-Cronjob.md)
   
 
-- [06-Networking](docs/06-Networking)
-
-  - [01-DNS](docs/06-Networking/01-DNS.md)
-  - [02-Port](docs/06-Networking/02-Port.md)
-  - [03-Networking-Basics](docs/06-Networking/03-Networking-Basics.md)
-  - [04-Troubleshooting](docs/06-Networking/04-Troubleshooting.md)
-
 - [07-Storage-in-Linux](docs/07-Storage-in-Linux)
 
   - [01-Storage-Basics](docs/07-Storage-in-Linux/01-Storage-Basics.md)
