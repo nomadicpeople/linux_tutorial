@@ -19,9 +19,9 @@
      
      An IP address is a string of numbers separated by periods. It is unique and used to identify a device on the internet or a local network. IP stands for "Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network. The full IP addressing range goes from 0.0.0.0 to 255.255.255.255, for example 192.158.1.38.
      
-   - By default you use port 22 to establish a connection via SSH, but you use a different one using the **`-p`** option.
+   - By default you use port 22 to establish a connection via SSH, but you can use a different one using the **`-p`** option.
      ```
-     ssh -p <port_number> <user_name>@<host_ip_address>
+     ssh -p <port_number> <user_name>@<remote_ip_address>
      ```
      A port in computer networking is a virtual point where network connections start and end. With the use of ports, a computer can use a single physical network connection to handle many incoming and outgoing requests by assigning a port number to each. The numbers go from 0 to 65535, which is a 16-bit number.
      
@@ -40,6 +40,9 @@
  
  ```
  With **`-L local_port:destination_server_ip:remote_port`** The local port on the local client is being forwarded to the port of the destination remote server.
+ 
+ With this you create an ssh tunnel to port **`destination_port`** on the remote system with IP **`destination_server_ip`** which you can access on your local system at "localhost:**`<local_port>`**". 
+
 
 Consider the figure below:
 
@@ -50,9 +53,12 @@ You are establishing a connection between local port **`9999`** with the destina
  **`instance`** is the hostname of the remote machine, that serves as a gateway server to access the destination.  **`user`** is your account name on instance. Note that we are using the default port  **`22`** on  **`instance`**. 
 
 #### Tips 
-- The above example uses option "-N"  (do not execute remote command) to create a noninteractive ssh connection and option "-f" to request ssh to go to the background once the ssh connection has been established.  
+- *The above example uses option "-N"  (do not execute remote command) to create a noninteractive ssh connection and option "-f" to request ssh to go to the background once the ssh connection has been established.*  
+- How to use tunneling for running Jupyter Notebooks
 
- #### Troubleshooting:
+ ## Troubleshooting:
+ - *Talk about inaccessibility of certain IPs within the same network. VLANs. <- find the exact wording of an error*
+ - 
  - Local and remote ports can match.
  - If you get the error "Address already in use", it probably means that your desktop is already using the local port you specified; try a different local port number.
  - If you are within the local network of the destination server, then do not use tunneling. You can connect directly the destination machine. 
@@ -72,4 +78,5 @@ References:
 1. https://www.openssh.com
 2. https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address
 3. https://phoenixnap.com/kb/ssh-port-forwarding
-4. 
+4. https://www.concordia.ca/ginacody/aits/support/faq/ssh-tunnel.html
+5. 
