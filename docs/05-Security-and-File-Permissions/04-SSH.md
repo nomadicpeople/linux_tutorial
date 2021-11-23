@@ -30,8 +30,9 @@
    
  - Your local SSH client establishes a connection with the remote SSH server. The connection is then forwarded to a resource within the trusted internal network. SSH connections are established, and security efforts can concentrate on the intermediary SSH server rather than individual resources in a network.
 
- - To use SSH tunneling in Linux, you need to provide your client with the source and destination port numbers, as well as the location of the destination server. The location can either be an IP address or a hostname.  A hostname is an alternative to an IP address. Instead of a string of numbers, a machine is identified by a label that is unique within the network.
+ - To use SSH tunneling in Linux, you need to provide your client with the source and destination port numbers, as well as the location of the destination server. The location can either be an IP address or a [hostname](https://en.wikipedia.org/wiki/Hostname).  A hostname is an alternative to an IP address. Instead of a string of numbers, a machine is identified by a label that is unique within the network.
  
+ ### The basics
  To create a local port forward add the -L parameter to the ssh command line.
  ```
  ssh -L <local_port>:<destination_ip_address>:<destination_port> <user_name>@<remote_ip_address>
@@ -40,32 +41,35 @@
  Where **`<remote_ip_address>`** is a jump server.
  With **`-L local_port:destination_server_ip:remote_port`** the local port on the local client is being forwarded to the port of the destination remote server.
  
- With this you create an ssh tunnel to port **`destination_port`** on the remote system with IP **`destination_server_ip`** which you can access on your local system at "localhost:**`<local_port>`**". 
+ While the tunnel is active, you should be able to access the destination through the secure SSH tunnel you created, by browsing to  **`http://127.0.0.1:<local_port>/`** or  **`http://localhost:<local_port>/`**. Remember to replace **`<local_port>`** with the local port number specified.
 
-Let’s say you have a MySQL database server running on machine db001.host on an internal (private) network, on port 3306, which is accessible from the machine pub001.host, and you want to connect using your local machine MySQL client to the database server. To do so, you can forward the connection using the following command:
+[localhost](https://www.hostinger.com/tutorials/what-is-localhost) refers to “this computer” or even more accurately “the computer I’m working on.” **`127.0.0.1`** is the default IP of your **`localhost`**.
 
-ssh -L 3336:db001.host:3306 -N -f user@pub001.host
-The -f option tells the ssh command to run in the background and -N not to execute a remote command. 
+   ### Examples
+1. Let’s say you have a MySQL database server running on machine **`db001.host`** on an internal (private) network, on port **`3306`**, which is accessible from the machine **`pub001.host`**, and you want to connect using your local machine MySQL client to the database server. To do so, you can forward the connection using the following command:
+   ```
+   ssh -L 3336:db001.host:3306 -N -f user@pub001.host
+   ```
+   The -f option tells the ssh command to run in the background and -N not to execute a remote command. 
 
-![Рисунок1](https://user-images.githubusercontent.com/73333051/141063533-927adc51-4135-4a92-af94-deffcc853c8d.png)
+   Now, if you point your local machine database client to **`127.0.0.1:3336`**, the connection will be forwarded to the **`db001.host:3306`** MySQL server through the **`pub001.host`** machine that acts as an intermediate server. 
 
 
-You are establishing a connection between local port **`9999`** with the destination port  **`80`**. **`instance`** is the hostname of the remote "jump" server. When the destination host is the same as the remote server, instead of specifying the destination host IP or hostname, you can use **`localhost`**. In short, in this command you are connecting to an application that is running on the remote server on port 80, but is not accecible from the outside.
 
+2. Suppose you want to connect to an application on a remote server. You can establish an SSH connection to the server, but the application you want access on that machine is not reachable from the outside. The figure below showcases how you can access such application through an SSH tunnel. The remote machine will serve both as the "jump" and destination servers. 
+   ![Рисунок1](https://user-images.githubusercontent.com/73333051/141063533-927adc51-4135-4a92-af94-deffcc853c8d.png)
 
+   You are establishing a connection between local port **`9999`** with the destination port  **`80`**. **`instance`** is the hostname of the remote server. The destination hostname is **`localhost`**, indicating that the destination host is the same as the remote server. Both ports 22 and 80 belong to the same machine.
+
+3. Jupyter Notebooks
 For example, suppose you are running a Jupyter Notebook on the remote server.
 
 But what happens if you can actually do need to go through the jump server, here two things can happen.
 1.dsd
 2.dfgd
 
-#### Tips 
-- *The above example uses option "-N"  (do not execute remote command) to create a noninteractive ssh connection and option "-f" to request ssh to go to the background once the ssh connection has been established.*  
-- How to use tunneling for running Jupyter Notebooks
-
  ## Troubleshooting:
  - *Talk about inaccessibility of certain IPs within the same network. VLANs. <- find the exact wording of an error*
- - 
  - Local and remote ports can match.
  - If you get the error "Address already in use", it probably means that your desktop is already using the local port you specified; try a different local port number.
  - If you are within the local network of the destination server, then do not use tunneling. You can connect directly the destination machine. 
@@ -78,7 +82,7 @@ But what happens if you can actually do need to go through the jump server, here
    -L 3000:remote_host2.issai.nu.edu.kz:3000
    ```
 
- - If you used the "-N" and "-f" options above, remember to kill your ssh tunnel once you're finished using it (see the "ps" and "kill" manpages for information on how to find and kill your ssh tunnel process). Otherwise, in the absence of those options, an interactive session was established in addition to the port forwardings; in that case, you must leave that interactive session active until you're finished using the tunnel, as exiting the interactive session will also tear down the tunnel.
+ - If you used the "-N" and "-f" options as shown above, remember to kill your ssh tunnel once you're finished using it (see the "ps" and "kill" manpages for information on how to find and kill your ssh tunnel process). Otherwise, in the absence of those options, an interactive session was established in addition to the port forwardings; in that case, you must leave that interactive session active until you're finished using the tunnel, as exiting the interactive session will also tear down the tunnel.
  
 
 References:
@@ -86,4 +90,5 @@ References:
 2. https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address
 3. https://phoenixnap.com/kb/ssh-port-forwarding
 4. https://www.concordia.ca/ginacody/aits/support/faq/ssh-tunnel.html
-5. 
+5. https://linuxize.com/post/how-to-setup-ssh-tunneling/
+6. 
