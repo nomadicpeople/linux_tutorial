@@ -56,11 +56,6 @@ We recommend to go through the sections in the incremetal order, one by one. We
   - [06-Cronjob](docs/05-Security-and-File-Permissions/06-Cronjob.md)
   
 
-- [07-Storage-in-Linux](docs/07-Storage-in-Linux)
-
-  - [01-Storage-Basics](docs/07-Storage-in-Linux/01-Storage-Basics.md)
-  - [02-File-System-in-Linux](docs/07-Storage-in-Linux/02-File-System-in-Linux.md)
-  
 - [08-Remote-Work](docs/08-Remote-Work)
   - [01-Tmux](docs/08-Remote-Work/01-Tmux.md)
   - [02-Remote-Interpreter-Pycharm](02-Remote-Interpreter-Pycharm.md)
