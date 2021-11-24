@@ -9,17 +9,16 @@
    - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
    - provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.
 
-#### Remote Connection
 In general, with the following command you can login to the remote server with a specific username and a password.
 
 ```
-ssh -p <port_number> <user>@<IP_address>
+ssh -p <port_number> <user_name>@<remote_IP_address>
 ```     
 where **`-p`** is the option to specify the port number for establishing an ssh connection. The default port to connect via SSH is 22.
 
-However, at ISSAI we practice passwordless authentication. To access the servers you must first generate a pair of private and public keys and share the latter one with the ISSAI administator. Only then your account will be activated and you will be able connect via SSH.
+However, at ISSAI we practice **passwordless authentication**. To access the servers you must first generate a pair of private and public keys and share the latter one with the ISSAI administator. Only then your account will be activated and you will be able connect via SSH.
    
-Let us go through the steps to generate a keypair. 
+Let us go through the steps to generate a **keypair**. 
 
 1. If you have Windows, please open WSL. Otherwise, open the default terminal. Run this command:
 
@@ -56,7 +55,7 @@ Select, copy and paste to the form.
 
 7. Once your request is approved and your account is ready, you will receive the information to connect to the servers via SSH:
 ```
-ssh -p <port_number> <user>@<IP_address>
+ssh -p <port_number> <user_name>@<remote_IP_address>
 ```   
 References:
 1. https://www.openssh.com
