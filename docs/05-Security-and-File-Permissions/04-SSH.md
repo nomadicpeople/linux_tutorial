@@ -48,10 +48,8 @@
    ### Examples
 1. Let’s say you have a MySQL database server running on machine **`db001.host`** on an internal (private) network, on port **`3306`**, which is accessible from the machine **`pub001.host`**, and you want to connect using your local machine MySQL client to the database server. To do so, you can forward the connection using the following command:
    ```
-   ssh -L 3336:db001.host:3306 -N -f user@pub001.host
+   ssh -L 3336:db001.host:3306 user@pub001.host
    ```
-   The -f option tells the ssh command to run in the background and -N not to execute a remote command. 
-
    Now, if you point your local machine database client to **`127.0.0.1:3336`**, the connection will be forwarded to the **`db001.host:3306`** MySQL server through the **`pub001.host`** machine that acts as an intermediate server. 
 
 
@@ -85,9 +83,9 @@
    
  ## Troubleshooting:
  - If you are within the local network of the destination server, then do not need the "jump" server. You can connect directly the destination machine. 
- - *Give the error on unable to connect from a subnetwork to a remote server*
  - Local and remote ports can match.
- - *Double check with Makat*If you get the error "channel 3: open failed: connect failed: Connection refused ": the error comes from the remote ("jump") server when it tries to make the TCP connection to the destination of the tunnel. The error means that this connection attempt was rejected.  . Try [ssh tunneling with port forwarding](https://medium.com/@sankarshan7/how-to-run-jupyter-notebook-in-server-which-is-at-multi-hop-distance-a02bc8e78314).
+ - If you get the error "Connection timed out"....
+ - If you get the error "channel 3: open failed: connect failed: Connection refused ": the error comes from the remote ("jump") server when it tries to make the TCP connection to the destination of the tunnel. The error means that this connection attempt was rejected. Most likely the destination app is not listening at the indicated port or the destination app is not able to accecto the connection at the indicated port. Try [ssh tunneling with port forwarding](https://medium.com/@sankarshan7/how-to-run-jupyter-notebook-in-server-which-is-at-multi-hop-distance-a02bc8e78314) instead, where you explicitly tie multiple ports across different hop connections.
  - If you get the error "Address already in use", it probably means that your desktop is already using the local port you specified; try a different local port number.
  - Additional "-L local_port:remote_IP:remote_port" clauses can be added to the ssh command, e.g.,
  ```
@@ -96,7 +94,7 @@
    -L 4000:remote_host1.issai.nu.edu.kz:4000\
    -L 3000:remote_host2.issai.nu.edu.kz:3000
    ```
- - If you used the "-N" and "-f" options as shown above, remember to kill your ssh tunnel once you're finished using it (see the "ps" and "kill" manpages for information on how to find and kill your ssh tunnel process). Otherwise, in the absence of those options, an interactive session was established in addition to the port forwardings; in that case, you must leave that interactive session active until you're finished using the tunnel, as exiting the interactive session will also tear down the tunnel.
+
  
 
 References:
