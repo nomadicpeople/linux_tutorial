@@ -1,13 +1,8 @@
 # Connecting to a remote server via SSH 
 
-- In this section we will walk you through the rules of connecting to ISSAI remote servers using SSH by OpenSSH project.
+- In this section we will walk you through the rules of connecting to ISSAI remote servers using SSH.
 - We will give you instructions on how to generate and share your public keys for passwordless authentication.
 - We have another section in Chapter 5 that dives deeper into SSH, SSH tunneling, tips and troubleshooting.
-
-- OpenSSH:
-   - is the premier connectivity tool for remote login with the SSH protocol. 
-   - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
-   - provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options.
 
 In general, with the following command you can login to the remote server with a specific username and a password.
 
