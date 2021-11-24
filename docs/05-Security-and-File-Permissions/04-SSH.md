@@ -12,16 +12,16 @@
    - To login to the remote server use **`ssh`**, which starts the SSH client program on the local machine and establishes a secure connection to the remote SSH server.
      
      ```
-     ssh <user_name>@<remote_ip_address>
+     ssh <remote_user_name>@<remote_ip_address>
      ```
      
-     Where **`<user_name>`** is your account name on the remote machine and **`<remote_ip_address>`** is the IP address of the machine to which you would like to establish an SSH connection.
+     Where **`<remote_user_name>`** is your account name on the remote machine and **`<remote_ip_address>`** is the IP address of the machine to which you would like to establish an SSH connection.
      
      An IP address is a string of numbers separated by periods. It is unique and used to identify a device on the internet or a local network. IP stands for "Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network. The full IP addressing range goes from 0.0.0.0 to 255.255.255.255, for example 192.158.1.38.
      
    - By default you use port 22 to establish a connection via SSH, but you can use a different one using the **`-p`** option.
      ```
-     ssh -p <port_number> <user_name>@<remote_ip_address>
+     ssh -p <port> <remote_user_name>@<remote_ip_address>
      ```
      A [port](https://github.com/nomadicpeople/linux_tutorial/blob/main/docs/06-Networking/02-Ports.md) in computer networking is a virtual point where network connections start and end. With the use of ports, a computer can use a single physical network connection to handle many incoming and outgoing requests by assigning a port number to each. The numbers go from 0 to 65535, which is a 16-bit number.
      
@@ -35,11 +35,11 @@
  ### The basics
  To create a local port forward add the -L parameter to the ssh command line.
  ```
- ssh -L <local_port>:<destination_ip_address>:<destination_port> <user_name>@<remote_ip_address>
+ ssh -L <local_port>:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address>
  
  ```
  Where **`<remote_ip_address>`** is a jump server.
- With **`-L local_port:destination_server_ip:remote_port`** the local port on the local client is being forwarded to the port of the destination remote server.
+ With **`-L <local_port>:<destination_server_ip>:<remote_port>`** the local port on the local client is being forwarded to the port of the destination remote server.
  
  While the tunnel is active, you should be able to access the destination through the secure SSH tunnel you created, by browsing to  **`http://127.0.0.1:<local_port>/`** or  **`http://localhost:<local_port>/`**. Remember to replace **`<local_port>`** with the local port number specified.
 
@@ -61,19 +61,34 @@
 
    You are establishing a connection between local port **`9999`** with the destination port  **`80`**. **`instance`** is the hostname of the remote server. The destination hostname is **`localhost`**, indicating that the destination host is the same as the remote server. Both ports 22 and 80 belong to the same machine.
 
-3. Jupyter Notebooks
-For example, suppose you are running a Jupyter Notebook on the remote server.
-
-But what happens if you can actually do need to go through the jump server, here two things can happen.
-1.dsd
-2.dfgd
-
+3. A very useful application to gain access through ssh tunneling is [Jupyter Notebook](https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/).
+   1. Launch Jupyter Notebook from remote server, selecting a port number for <destination_port_number>:
+   ```
+   jupyter notebook --no-browser --port=<destination_port>
+   ```
+   For example, if you want to use port number 8080, you would run the following:
+   ```
+   jupyter notebook --no-browser --port=8080
+   ```
+   Or run the following command to launch with default port (8888):
+   ```
+   jupyter notebook --no-browser
+   ```
+   2. If you can directly connect to the remote server, then you can access the notebook by running on you local machine:
+   ```
+   ssh -L 8080:localhost:<destination_port_number> <destination_user_name>@<destination_ip_address>
+   ```
+   Otherwise, if you can access the remote machine only through a "jump" server, then follow the command template that we introduced in the beginning:
+   ```
+   ssh -L 8080:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address>
+   ```
+   
  ## Troubleshooting:
- - *Talk about inaccessibility of certain IPs within the same network. VLANs. <- find the exact wording of an error*
+ - If you are within the local network of the destination server, then do not need the "jump" server. You can connect directly the destination machine. 
+ - *Give the error on unable to connect from a subnetwork to a remote server*
  - Local and remote ports can match.
+ - *Double check with Makat*If you get the error "channel 3: open failed: connect failed: Connection refused ": the error comes from the remote ("jump") server when it tries to make the TCP connection to the destination of the tunnel. The error means that this connection attempt was rejected.  . Try [ssh tunneling with port forwarding](https://medium.com/@sankarshan7/how-to-run-jupyter-notebook-in-server-which-is-at-multi-hop-distance-a02bc8e78314).
  - If you get the error "Address already in use", it probably means that your desktop is already using the local port you specified; try a different local port number.
- - If you are within the local network of the destination server, then do not use tunneling. You can connect directly the destination machine. 
- 
  - Additional "-L local_port:remote_IP:remote_port" clauses can be added to the ssh command, e.g.,
  ```
  ssh userfoo@issai.nu.edu.kz \
@@ -81,7 +96,6 @@ But what happens if you can actually do need to go through the jump server, here
    -L 4000:remote_host1.issai.nu.edu.kz:4000\
    -L 3000:remote_host2.issai.nu.edu.kz:3000
    ```
-
  - If you used the "-N" and "-f" options as shown above, remember to kill your ssh tunnel once you're finished using it (see the "ps" and "kill" manpages for information on how to find and kill your ssh tunnel process). Otherwise, in the absence of those options, an interactive session was established in addition to the port forwardings; in that case, you must leave that interactive session active until you're finished using the tunnel, as exiting the interactive session will also tear down the tunnel.
  
 
@@ -91,4 +105,5 @@ References:
 3. https://phoenixnap.com/kb/ssh-port-forwarding
 4. https://www.concordia.ca/ginacody/aits/support/faq/ssh-tunnel.html
 5. https://linuxize.com/post/how-to-setup-ssh-tunneling/
-6. 
+6. https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/
+7. 
