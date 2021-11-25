@@ -1,7 +1,6 @@
 # SSH 
 
-   - In this section we will learn about SSH, provided by the OpenSSH project.
-   - SSH stands for Secure Socket Shell
+   - In this section we will learn about  Secure Socket Shell (SSH), provided by the OpenSSH project.(https://www.openssh.com)
    - OpenSSH:
       - is the premier connectivity tool for remote login with the SSH protocol. 
       - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
