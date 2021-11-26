@@ -1,6 +1,6 @@
 # SSH 
 
-   - In this section we will learn about  Secure Socket Shell (SSH), provided by the OpenSSH project.(https://www.openssh.com)
+   - In this section, we will learn about Secure Socket Shell (SSH), provided by the OpenSSH project.(https://www.openssh.com)
    - OpenSSH:
       - is the premier connectivity tool for remote login with the SSH protocol. 
       - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
@@ -8,23 +8,38 @@
    
    ## Connect to a remote server via ssh
 
-   - To login to the remote server use **`ssh`**, which starts the SSH client program on the local machine and establishes a secure connection to the remote SSH server.
+   - To login to a remote server, use the **`ssh`** command to start the SSH client program on your local machine and establish a secure connection to the remote server.
      
      ```
      ssh <remote_user_name>@<remote_ip_address>
      ```
      
-     Where **`<remote_user_name>`** is your account name on the remote machine and **`<remote_ip_address>`** is the IP address of the machine to which you would like to establish an SSH connection.
+     where **`<remote_user_name>`** is your account/user name on the remote machine and **`<remote_ip_address>`** is the IP address of the machine to which you would like to establish an SSH connection.
      
      An IP address is a string of numbers separated by periods. It is unique and used to identify a device on the internet or a local network. IP stands for "Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network. The full IP addressing range goes from 0.0.0.0 to 255.255.255.255, for example 192.158.1.38.
      
-   - By default you use port 22 to establish a connection via SSH, but you can use a different one using the **`-p`** option.
+   - By default, you use port 22 to establish a connection via SSH, but you can use a different one using the **`-p`** option.
      ```
      ssh -p <port> <remote_user_name>@<remote_ip_address>
      ```
      A [port](https://github.com/nomadicpeople/linux_tutorial/blob/main/docs/06-Networking/02-Ports.md) in computer networking is a virtual point where network connections start and end. With the use of ports, a computer can use a single physical network connection to handle many incoming and outgoing requests by assigning a port number to each. The numbers go from 0 to 65535, which is a 16-bit number.
      
+     Some of these port numbers are specifically defined and always associated with a specific type of service -- for example, File Transfer Protocol (FTP) is always port number 21 and Hypertext Transfer Protocol web traffic is always port 80. As the result, ports allow computers to easily differentiate between different kinds of traffic: emails go to a different port than webpages, for instance, even though both reach a computer over the same Internet connection.
+
+      In general, port numbers lower than 1024 identify the historically most commonly used services and are called the well-known port numbers. Higher-numbered ports are available for general use by applications and are known as ephemeral ports.
+
+      A port is always associated with a protocol, such as Transmission Control Protocol(TCP). The port is specified by having the URL or IP address followed by a colon then the port number -- as examples, 10.0.0.1:80 or https://issai.nu.edu.kz:443. 
+   
    ## SSH tunneling
+   
+   Local forwarding is used to forward a port from the client machine to the server machine. Basically, the SSH client listens for connections on a configured port, and when it receives a connection, it tunnels the connection to an SSH server. The server connects to a configurated destination port, possibly on a different machine than the SSH server.
+
+Typical uses for local port forwarding include:
+
+ - Tunneling sessions and file transfers through jump servers
+ - Connecting to a service on an internal network from the outside
+ - Connecting to a remote file share over the Internet
+   
  - Valuable network resources do not generally allow remote SSH access. This would be a severe limitation in a modern distributed environment. Organizations usually solve this issue by setting up an intermediary SSH ‘jump’ server to accept remote SSH connection
    
  - Your local SSH client establishes a connection with the remote SSH server. The connection is then forwarded to a resource within the trusted internal network. SSH connections are established, and security efforts can concentrate on the intermediary SSH server rather than individual resources in a network.
@@ -32,7 +47,7 @@
  - To use SSH tunneling in Linux, you need to provide your client with the source and destination port numbers, as well as the location of the destination server. The location can either be an IP address or a [hostname](https://en.wikipedia.org/wiki/Hostname).  A hostname is an alternative to an IP address. Instead of a string of numbers, a machine is identified by a label that is unique within the network.
  
  ### The basics
- To create a local port forward add the -L parameter to the ssh command line.
+ In OpenSSH, local port forwarding is configured using the -L option:
  ```
  ssh -L <local_port>:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address>
  
