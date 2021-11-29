@@ -20,7 +20,7 @@
      
    - By default, you use port 22 to establish a connection via SSH, but you can use a different one using the **`-p`** option.
      ```
-     ssh -p <port> <remote_user_name>@<remote_ip_address>
+     ssh -p <port> <remote_user_name>@<remote_ip_address> 
      ```
      A [port](https://github.com/nomadicpeople/linux_tutorial/blob/main/docs/06-Networking/02-Ports.md) in computer networking is a virtual point where network connections start and end. With the use of ports, a computer can use a single physical network connection to handle many incoming and outgoing requests by assigning a port number to each. The numbers go from 0 to 65535, which is a 16-bit number.
      
@@ -28,32 +28,52 @@
 
       In general, port numbers lower than 1024 identify the historically most commonly used services and are called the well-known port numbers. Higher-numbered ports are available for general use by applications and are known as ephemeral ports.
 
-      A port is always associated with a protocol, such as Transmission Control Protocol(TCP). The port is specified by having the URL or IP address followed by a colon then the port number -- as examples, 10.0.0.1:80 or https://issai.nu.edu.kz:443. 
+      A port is always associated with a protocol, for example as Transmission Control Protocol(TCP). 
+      
+      The combination of a host name (IP address or DNS name) and a port number is defined as socket. This creates a unique identifier that a client application uses as an end point of communications. For example: 10.0.0.1:80 or https://issai.nu.edu.kz:443. 
    
    ## SSH tunneling
    
-   Local forwarding is used to forward a port from the client machine to the server machine. Basically, the SSH client listens for connections on a configured port, and when it receives a connection, it tunnels the connection to an SSH server. The server connects to a configurated destination port, possibly on a different machine than the SSH server.
+Local forwarding (ssh tunneling) is used to forward a port from the client machine to the server machine. Basically, the SSH client listens for connections on a configured port, and when it receives a connection, it tunnels the connection to an SSH server. The server connects to a configurated destination port, possibly on a different machine than the SSH server.
 
 Typical uses for local port forwarding include:
 
  - Tunneling sessions and file transfers through jump servers
  - Connecting to a service on an internal network from the outside
  - Connecting to a remote file share over the Internet
-   
+
+
+ ### The basics
+ The general command-line syntax for local port forwarding is:
+ ```
+ ssh -L <local_port>:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address> 
+ ```
+Let us go through a few examples to illustrate how it works:
+
+ 1. The figure below depics  behind the scenes of running:
+```
+ssh -L 9031:localhost:7452 hostB
+```
+ 
+When you run the command You envoke the Secure Shell client on your computer. When the Secure Shell connection is established, the Secure Shell client opens a listening socket using the designated local port **<local_port>**. By default, the client uses the **loopback address** ("localhost" or 127.0.0.1) when it opens a socket for local port forwarding. As the result, a local application will connect to localhost:<local_port> to ....   
+
+On the other side, the remote server with IP <remote_ip_address> awaits on its designated port, which is by default 22. This host is configured to redirect data through a secure tunnel to some specified destination host and port. 
+
+Lets go through Figure 1.
+Note that Figure 1 depicts the configuation were the remote and the destination servers are the same machine. This is why <destination_id_address> is the loopback address. 
+
+
+
+Figure 2 presents the alternative, where the remote machine serves as a "jump server" that forwards all incoming data to the server at <destination_ip_address> that listens to port <destination_port>.
+
+
+Figure 3 ....
  - Valuable network resources do not generally allow remote SSH access. This would be a severe limitation in a modern distributed environment. Organizations usually solve this issue by setting up an intermediary SSH ‘jump’ server to accept remote SSH connection
    
  - Your local SSH client establishes a connection with the remote SSH server. The connection is then forwarded to a resource within the trusted internal network. SSH connections are established, and security efforts can concentrate on the intermediary SSH server rather than individual resources in a network.
 
  - To use SSH tunneling in Linux, you need to provide your client with the source and destination port numbers, as well as the location of the destination server. The location can either be an IP address or a [hostname](https://en.wikipedia.org/wiki/Hostname).  A hostname is an alternative to an IP address. Instead of a string of numbers, a machine is identified by a label that is unique within the network.
  
- ### The basics
- In OpenSSH, local port forwarding is configured using the -L option:
- ```
- ssh -L <local_port>:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address>
- 
- ```
- Where **`<remote_ip_address>`** is a jump server.
- With **`-L <local_port>:<destination_server_ip>:<remote_port>`** the local port on the local client is being forwarded to the port of the destination remote server.
  
  While the tunnel is active, you should be able to access the destination through the secure SSH tunnel you created, by browsing to  **`http://127.0.0.1:<local_port>/`** or  **`http://localhost:<local_port>/`**. Remember to replace **`<local_port>`** with the local port number specified.
 
