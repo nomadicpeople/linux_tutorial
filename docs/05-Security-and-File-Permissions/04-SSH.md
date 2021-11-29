@@ -34,7 +34,9 @@
    
    ## SSH tunneling
    
-Local forwarding (ssh tunneling) is used to forward a port from the client machine to the server machine. Basically, the SSH client listens for connections on a configured port, and when it receives a connection, it tunnels the connection to an SSH server. The server connects to a configurated destination port, possibly on a different machine than the SSH server.
+Local forwarding (ssh tunneling) is used to forward a port from the client machine to the server machine. Basically, the SSH client listens for connections on a configured port, and when it receives a connection, it tunnels the connection to an SSH server. The server connects to a configurated destination port, possibly on a different machine than the SSH server. 
+
+In addition to  the source and destination port numbers, the SSH client must be provided with the location of the destination server. The location can either be an IP address or a [hostname](https://en.wikipedia.org/wiki/Hostname).  A hostname is an alternative to an IP address. Instead of a string of numbers, a machine is identified by a label that is unique within the network.
 
 Typical uses for local port forwarding include:
 
@@ -50,48 +52,37 @@ Typical uses for local port forwarding include:
  ```
 Let us go through a few examples to illustrate how it works:
 
- 1. The figure below depics  behind the scenes of running:
+![Рисунок1](https://github.com/nomadicpeople/linux_tutorial/blob/8c180be42e0d6bb7126e92c20939122d3f653011/images/ssh_tunnel_1.png)
+
+The figure above depicts behind the scenes of running:
 ```
 ssh -L 9031:localhost:7452 hostB
 ```
+When you run the command, you envoke the Secure Shell client on your computer. When the Secure Shell connection is established, the Secure Shell client opens a listening socket using the designated local port **9031**. By default, the client uses the **loopback address** ("localhost" or 127.0.0.1) when it opens a socket for local port forwarding. As the result, a local application will connect to **localhost:9031** to forward data.   
+
+On the other side, the remote server with then hostname **hostB** awaits on its designated port, which is by default 22. This host is configured to redirect data through a secure tunnel to some specified destination host and port. In this case the destination port number is 7452. 
+
+Note that in this configuation, the remote and the destination servers are the same machine. This is why **<destination_id_address>** is the **localhostt**. [localhost](https://www.hostinger.com/tutorials/what-is-localhost) refers to “this computer” or even more accurately “the computer I’m working on.” **`127.0.0.1`** is the default IP of your **`localhost`**.
+
+
+The next figure presents the alternative, where the remote machine **hostB** serves as a "jump server" that forwards all incoming data to the server with hostname **hostC** that listens to port 7452. 
+
+![Рисунок1](https://github.com/nomadicpeople/linux_tutorial/blob/8c180be42e0d6bb7126e92c20939122d3f653011/images/ssh_tunnel_2.png)
+
+The configuration above is equivalent to running:
+```
+ssh -L 9031:hostC:7452 hostB
+```
+In both cases the destination can be accessed by browsing  **`http://127.0.0.1:9031/`** or  **`http://localhost:9031/`**.
+
+Case #1 is applicable when you can establish an SSH connection to a remote server, and you want to access the application that is running on that server, but is not reachable from the outside.
+
+Case #2 is usefull for the sitations where valuable network resources are not allowed for remote SSH access. You can only connect to then through the an intermediary SSH ‘jump’ or 'gateway' server that accepts remote SSH connection from outside of the protected network.
+
+### Forwarding chain   
+![Рисунок1](https://github.com/nomadicpeople/linux_tutorial/blob/8c180be42e0d6bb7126e92c20939122d3f653011/images/ssh_tunnel_3.png)
  
-When you run the command You envoke the Secure Shell client on your computer. When the Secure Shell connection is established, the Secure Shell client opens a listening socket using the designated local port **<local_port>**. By default, the client uses the **loopback address** ("localhost" or 127.0.0.1) when it opens a socket for local port forwarding. As the result, a local application will connect to localhost:<local_port> to ....   
 
-On the other side, the remote server with IP <remote_ip_address> awaits on its designated port, which is by default 22. This host is configured to redirect data through a secure tunnel to some specified destination host and port. 
-
-Lets go through Figure 1.
-Note that Figure 1 depicts the configuation were the remote and the destination servers are the same machine. This is why <destination_id_address> is the loopback address. 
-
-
-
-Figure 2 presents the alternative, where the remote machine serves as a "jump server" that forwards all incoming data to the server at <destination_ip_address> that listens to port <destination_port>.
-
-
-Figure 3 ....
- - Valuable network resources do not generally allow remote SSH access. This would be a severe limitation in a modern distributed environment. Organizations usually solve this issue by setting up an intermediary SSH ‘jump’ server to accept remote SSH connection
-   
- - Your local SSH client establishes a connection with the remote SSH server. The connection is then forwarded to a resource within the trusted internal network. SSH connections are established, and security efforts can concentrate on the intermediary SSH server rather than individual resources in a network.
-
- - To use SSH tunneling in Linux, you need to provide your client with the source and destination port numbers, as well as the location of the destination server. The location can either be an IP address or a [hostname](https://en.wikipedia.org/wiki/Hostname).  A hostname is an alternative to an IP address. Instead of a string of numbers, a machine is identified by a label that is unique within the network.
- 
- 
- While the tunnel is active, you should be able to access the destination through the secure SSH tunnel you created, by browsing to  **`http://127.0.0.1:<local_port>/`** or  **`http://localhost:<local_port>/`**. Remember to replace **`<local_port>`** with the local port number specified.
-
-[localhost](https://www.hostinger.com/tutorials/what-is-localhost) refers to “this computer” or even more accurately “the computer I’m working on.” **`127.0.0.1`** is the default IP of your **`localhost`**.
-
-   ### Examples
-1. Let’s say you have a MySQL database server running on machine **`db001.host`** on an internal (private) network, on port **`3306`**, which is accessible from the machine **`pub001.host`**, and you want to connect using your local machine MySQL client to the database server. To do so, you can forward the connection using the following command:
-   ```
-   ssh -L 3336:db001.host:3306 user@pub001.host
-   ```
-   Now, if you point your local machine database client to **`127.0.0.1:3336`**, the connection will be forwarded to the **`db001.host:3306`** MySQL server through the **`pub001.host`** machine that acts as an intermediate server. 
-
-
-
-2. Suppose you want to connect to an application on a remote server. You can establish an SSH connection to the server, but the application you want access on that machine is not reachable from the outside. The figure below showcases how you can access such application through an SSH tunnel. The remote machine will serve both as the "jump" and destination servers. 
-   ![Рисунок1](https://user-images.githubusercontent.com/73333051/141063533-927adc51-4135-4a92-af94-deffcc853c8d.png)
-
-   You are establishing a connection between local port **`9999`** with the destination port  **`80`**. **`instance`** is the hostname of the remote server. The destination hostname is **`localhost`**, indicating that the destination host is the same as the remote server. Both ports 22 and 80 belong to the same machine.
 
 3. A very useful application to gain access through ssh tunneling is [Jupyter Notebook](https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/).
    1. Launch Jupyter Notebook from remote server, selecting a port number for <destination_port_number>:
