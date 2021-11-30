@@ -1,6 +1,6 @@
 # SSH 
 
-   - In this section, we will learn about Secure Socket Shell (SSH), provided by the OpenSSH project.(https://www.openssh.com)
+   - In this section, we will learn about Secure Socket Shell (SSH), provided by the OpenSSH project.(https://www.openssh.com), SSH tunneling, and how to access a Jupyter Notebook running on a remote machine.
    - OpenSSH:
       - is the premier connectivity tool for remote login with the SSH protocol. 
       - encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. 
