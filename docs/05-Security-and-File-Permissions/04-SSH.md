@@ -79,12 +79,14 @@ Case #1 is applicable when you can establish an SSH connection to a remote serve
 
 Case #2 is usefull for the sitations where valuable network resources are not allowed for remote SSH access. You can only connect to then through the an intermediary SSH ‘jump’ or 'gateway' server that accepts remote SSH connection from outside of the protected network.
 
+Let us now consider Case #3, where 
 ### Forwarding chain   
 ![Рисунок1](https://github.com/nomadicpeople/linux_tutorial/blob/8c180be42e0d6bb7126e92c20939122d3f653011/images/ssh_tunnel_3.png)
  
 
 
-3. A very useful application to gain access through ssh tunneling is [Jupyter Notebook](https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/).
+### SSH tunneling use case: Jupyter Notebooks
+A very useful application to gain access through ssh tunneling is [Jupyter Notebook](https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/).
    1. Launch Jupyter Notebook from remote server, selecting a port number for <destination_port_number>:
    ```
    jupyter notebook --no-browser --port=<destination_port>
@@ -97,20 +99,21 @@ Case #2 is usefull for the sitations where valuable network resources are not al
    ```
    jupyter notebook --no-browser
    ```
-   2. If you can directly connect to the remote server, then you can access the notebook by running on you local machine:
-   ```
-   ssh -L 8080:localhost:<destination_port_number> <destination_user_name>@<destination_ip_address>
-   ```
-   Otherwise, if you can access the remote machine only through a "jump" server, then follow the command template that we introduced in the beginning:
-   ```
-   ssh -L 8080:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address>
-   ```
-   
+   2. All of the three cases might be applicable to gain access to the notebook:
+      1. If you can directly connect to the remote server, then you can simply run:
+      ```
+      ssh -L 8080:localhost:<destination_port_number> <destination_user_name>@<destination_ip_address>
+      ```
+      2. If you can access the remote machine only through a "jump" server, then you got Case #2:
+      ```
+      ssh -L 8080:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address>
+      ```
+      3. If running the previous command gives you an error "channel 3: open failed: connect failed: Connection refused ": the error comes from the remote ("jump") server when it tries to make the TCP connection to the destination of the tunnel. The error means that this connection attempt was rejected. Most likely the destination app is not listening at the indicated port or the destination app is not able to accecto the connection at the indicated port. 
+
  ## Troubleshooting:
  - If you are within the local network of the destination server, then do not need the "jump" server. You can connect directly the destination machine. 
  - Local and remote ports can match.
  - If you get the error "Connection timed out"....
- - If you get the error "channel 3: open failed: connect failed: Connection refused ": the error comes from the remote ("jump") server when it tries to make the TCP connection to the destination of the tunnel. The error means that this connection attempt was rejected. Most likely the destination app is not listening at the indicated port or the destination app is not able to accecto the connection at the indicated port. Try [ssh tunneling with port forwarding](https://medium.com/@sankarshan7/how-to-run-jupyter-notebook-in-server-which-is-at-multi-hop-distance-a02bc8e78314) instead, where you explicitly tie multiple ports across different hop connections.
  - If you get the error "Address already in use", it probably means that your desktop is already using the local port you specified; try a different local port number.
  - Additional "-L local_port:remote_IP:remote_port" clauses can be added to the ssh command, e.g.,
  ```
