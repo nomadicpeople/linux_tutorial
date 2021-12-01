@@ -81,8 +81,7 @@ rsync -a <remote_user_name>@<remote_ip_address>:/home/username/dir1 <local_targe
 where **`/home/username/dir1`** is an example of the path to **dir1** on the remote machine.
 
 2. If you cannot establish a direct SSH connection to the destination system, but you have access to a remote machine that can serve as a "jump" server between the two, then you should take advantage of SSH tunneling.
-   
-   ![Рисунок1](https://github.com/nomadicpeople/linux_tutorial/blob/8c180be42e0d6bb7126e92c20939122d3f653011/images/ssh_tunnel_2.png)
+  
     1. First create an ssh tunnel, as described in [Section-5.3](docs/05-Security-and-File-Permissions/03-SSH.md):
       ``` 
       ssh -L <local_port>:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address> 
