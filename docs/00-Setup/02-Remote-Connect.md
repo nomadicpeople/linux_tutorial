@@ -1,7 +1,7 @@
 # Connecting to a remote server via SSH 
 
-- In this section we will walk you through the rules of connecting to ISSAI remote servers using SSH.
-- We will give you instructions on how to generate and share your public keys for passwordless authentication.
+- In this section, we will walk you through the rules of connecting to ISSAI remote servers using  Secure Socket Shell (SSH).
+- We provide you with instructions on how to generate and share your public keys for passwordless authentication.
 - We have another section in Chapter 5 that dives deeper into SSH, SSH tunneling, tips and troubleshooting.
 
 In general, with the following command you can login to the remote server with a specific username and a password.
