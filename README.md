@@ -50,10 +50,10 @@ How to start?
 - [Chapter-5-Security-and-File-Permissions](docs/05-Security-and-File-Permissions)
 
   - [Section-5.1-Linux-Accounts](docs/05-Security-and-File-Permissions/01-Linux-Accounts.md)
-  - [Section-5.2-File-Permissions](docs/05-Security-and-File-Permissions/03-File-Permissions.md)
-  - [Section-5.3-Connect-SSH](docs/05-Security-and-File-Permissions/04-SSH.md)
-  - [Section-5.4-Transfer-Data-Rsync](docs/05-Security-and-File-Permissions/05-Rsync.md)
-  - [Section-5.5-Cronjob](docs/05-Security-and-File-Permissions/06-Cronjob.md)
+  - [Section-5.2-File-Permissions](docs/05-Security-and-File-Permissions/02-File-Permissions.md)
+  - [Section-5.3-Connect-SSH](docs/05-Security-and-File-Permissions/03-SSH.md)
+  - [Section-5.4-Transfer-Data-Rsync](docs/05-Security-and-File-Permissions/04-Rsync.md)
+  - [Section-5.5-Cronjob](docs/05-Security-and-File-Permissions/05-Cronjob.md)
   
 
 - [Chapter-6-Remote-Work](docs/08-Remote-Work)
