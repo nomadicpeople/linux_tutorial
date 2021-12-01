@@ -2,13 +2,13 @@
 
 - In this section we will learn about how to effiently transfer data between remotely connected machines.
 
-As part of the 8.0 pre-release announcement, the OpenSSH project stated that they consider the **scp protocol outdated, inflexible, and not readily fixed**. They then go on to recommend the use of sftp or **rsync** for file transfer instead.
+- As part of the 8.0 pre-release announcement, the OpenSSH project stated that they consider the **scp protocol outdated, inflexible, and not readily fixed**. They then go on to recommend the use of sftp or **rsync** for file transfer instead.
 
-Rsync, which stands for "remote sync", is a tool for efficiently transferring and synchronizing files between two locations over a remote shell. It uses the delta-transfer algorithm to transfer only the differences between the source and the destination, thus minimizing the amount of data to be copied.
+- Rsync, which stands for "remote sync", is a tool for efficiently transferring and synchronizing files between two locations over a remote shell. It uses the delta-transfer algorithm to transfer only the differences between the source and the destination, thus minimizing the amount of data to be copied.
 
-**Rsync also only copies a file if the target file is different than the source file. This works recursively through directories.**
+- Rsync copies a file only if the target file is different than the source file and works recursively through directories.
 
-Rsync is widely used for backups and mirroring and as an improved copy command for everyday use (a replacement for scp , sftp , and cp commands).
+- Rsync is widely used for backups and mirroring and as an improved copy command for everyday use (a replacement for scp , sftp , and cp commands).
 
 #### The rsync utility expressions take the following form:
 ```
@@ -26,11 +26,10 @@ Parameters:
 #### Here are the most widely used options, the parameter that controls how the command behaves.
 
 - -a, --archive, archive mode, equivalent to -rlptgoD. This option tells rsync to syncs directories recursively, transfer special and block devices, preserve symbolic links, modification times, groups, ownership, and permissions.
-- -z, --compress. This option forces rsync to compresses the data as it is sent to the destination machine. Use this option only if the connection to the remote machine is slow.
+c
 - -P, equivalent to --partial --progress. When this option is used, rsync shows a progress bar during the transfer and keeps the partially transferred files. It is useful when transferring large files over slow or unstable network connections.
 - --delete. When this option is used, rsync deletes extraneous files from the destination location. It is useful for mirroring.
 - -q, --quiet. Use this option if you want to suppress non-error messages.
-- -e. This option allows you to choose a different remote shell. By default, rsync is configured to use ssh.
 - -v, --verbose. Increase verbosity
 - -r. Means recursive, which is necessary for directory syncing.
 - -n, --dry-run. Perform a trial run with no changes made
@@ -47,7 +46,7 @@ touch dir1/file{1..100}
 ```
 To verify that **dir1** contains 100 empty files run the following command:
 ```
-ls dir1
+ls dir1 | wc 
 ```
 Let's sync the content of of the two directories on the same system. Note **dir2** is empty at this point. For this purpose we can use either **-r** or **-a** option. Thus the following two commands are equivalent:
 ```
@@ -62,42 +61,38 @@ rsync -r dir1 dir2
 ```
 Run the command and list the content of **dir2** to verify the result.
 
-Its a good practice to double-check your arguments before executing an rsync command. You can do that by passing the **-n** or **--dry-run** options.  
-The **-v flag (for verbose)** is also helpful to get the appropriate output 
+Its a good practice to double-check your arguments before executing an rsync command. The **-n** or **--dry-run** option will let you to run the command, without actually executing it. The **-v** stands for verbose output, which is helpful to check which files are involved with the transfer. 
 ```
 rsync -anv dir1/ dir2
 ```
 Run the command to see the verbose output. Then, compare this output to the output we get when we remove the trailing slash.
 
 #### How To Use Rsync to Sync with a Remote System
-Syncing to a remote system requires the SSH access to the remote machine and rsync installed on both sides. You can sync the **dir1** folder from earlier to a remote computer by using the following command :
+1.  If you have a direct access to the remote system through SSH and rsync is installed on both sides, then you can sync the **dir1** folder from earlier to a remote computer by using the following command :
 ```
-rsync -a ~/dir1 username@remote_host:destination_directory
+rsync -a ~/dir1 <remote_user_name>@<remote_ip_address>:<destination_target_directory>
 ```
-Note that we want to transfer the actual directory in this case, so we omit the trailing slash.This is called a “push” operation because it pushes a directory from the local system to a remote system. 
+Note that we want to transfer the actual directory in this case, so we omit the trailing slash. This is called a “push” operation because it pushes a directory from the local system to a remote system. 
 
 The opposite operation is “pull”. It is used to sync a remote directory to the local system. If the **dir1** were on the remote system instead of our local system, the syntax would be:
 ```
-rsync -a username@remote_host:/home/username/dir1 place_to_sync_on_local_machine
+rsync -a <remote_user_name>@<remote_ip_address>:/home/username/dir1 <local_target_directory>
 ```
+where **`/home/username/dir1`** is an example of the path to **dir1** on the remote machine.
 
-
-- To connect to the server remotely, create an ssh tunnel:
-
-```
-               ssh -L local_port(22):remote_server:remote_port(22) user@gateway_ipaddress  -p gateway_port
-
-```
-- To synchronize data with a remote server:
-
-```
-      rsync -avzhe  'ssh -p 22' /cygdrive/c/Users/Username/Desktop/Folder/ username@127.0.0.1:/raid/username/folder/ 
-```
-- Copying files and then deleting them on a remote server:
-```
-rsync -av --delete -e 'ssh -p 22' /cygdrive/c/Users/Username/Desktop/Folder/ username@127.0.0.1:/raid/username/folder/
-```
-
+2. If you cannot establish a direct SSH connection to the destination system, but you have access to a remote machine that can serve as a "jump" server between the two, then you should take advantage of SSH tunneling.
+   
+   ![Рисунок1](https://github.com/nomadicpeople/linux_tutorial/blob/8c180be42e0d6bb7126e92c20939122d3f653011/images/ssh_tunnel_2.png)
+    1. First create an ssh tunnel, as described in [Section-5.3](docs/05-Security-and-File-Permissions/03-SSH.md):
+      ``` 
+      ssh -L <local_port>:<destination_ip_address>:<destination_port> <remote_user_name>@<remote_ip_address> 
+      ```
+    2. If you want to syncronize the **dir1** folder with the destination server:
+      ```
+      rsync -avze  'ssh -p <local_port>' ~/dir1 <destination_user_name>@localhost:<destination_target_directory>
+      ```
+      where **-z** option forces rsync to compresses the data as it is sent to the destination machine, **-h** option forces rsync to compresses the data as it is sent to the destination machine, and **-e** specifies the remote shell to use (here we specify which port to use with the default ssh)
+       More information about the options can be explored [here](https://explainshell.com/explain?cmd=rsync+-a+-v+-e+-z+--delete)
 
 
 Sources:
