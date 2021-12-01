@@ -152,4 +152,7 @@ References:
 4. https://www.concordia.ca/ginacody/aits/support/faq/ssh-tunnel.html
 5. https://linuxize.com/post/how-to-setup-ssh-tunneling/
 6. https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/
-7. 
+7. https://medium.com/@sankarshan7/how-to-run-jupyter-notebook-in-server-which-is-at-multi-hop-distance-a02bc8e78314
+8. https://www.microfocus.com/documentation/reflection-desktop/16-2/rdesktop-guide/rsit_unix_local_forwarding.htm?view=print
+9. https://habr.com/ru/post/331348/
+
