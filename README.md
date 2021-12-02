@@ -34,9 +34,9 @@ How to start?
   
 - [Chapter-3-Package-Management](docs/03-Package-Management)
 
-  - [Section-3.1-Package-Management-Distribution](docs/03-Package-Mangement/01-Package-Management-Distribution.md)
-  - [Section-3.2-APT](docs/03-Package-Mangement/02-APT.md)
-  - [Section-3.3-Lab-APT](docs/03-Package-Mangement/03-Lab-APT.md)
+  - [Section-3.1-Package-Management-Distribution](docs/03-Package-Management/01-Package-Management-Distribution.md)
+  - [Section-3.2-APT](docs/03-Package-Management/02-APT.md)
+  - [Section-3.3-Lab-APT](docs/03-Package-Management/03-Lab-APT.md)
 
 
 - [Chapter-4-Working-With-Shell-Part-II](docs/04-Working-With-Shell-Part-II)
