@@ -26,6 +26,7 @@ Another way to do this is make use of the **`find`** command. Use the find comma
 ```
 $ find /home/michael -name City.txt
 ```
+where **`/home/michael`** is an example of a path to the directory
    ![locate-find](../../images/locate-find.PNG)
    
 ## Grep
@@ -34,7 +35,7 @@ To search within files, the most popular command in linux is grep.
 - Grep is commonly used to print lines of a file matching a pattern but it also offers a variety of other options as well.
 - The grep command is case-sensitive  
 
-To search for the word **`second`** from the **`sample.txt`**
+To search for the word **`second`** from some text file called **`sample.txt`**
 ```
 $ grep second sample.txt
 ```
@@ -58,7 +59,7 @@ $ grep -v "printed" sample.txt
   
 #### What if you want to match a pattern that form a whole word?
 
-To search for the whole word called **`exam`**. Use **`grep`** followed by **`-w`** flag  
+To search for the whole word called **`exam`** in some text file called **`examples.txt`**. Use **`grep`** followed by **`-w`** flag
 ```
 $ grep -w exam examples.txt
 ```
@@ -68,21 +69,7 @@ You can also combine multiple options together. For example, to reverse the sear
 $ grep -vw exam examples.txt
 ```
 
-To print the number of lines after and before matching a pattern. Use **`grep`** command with **`-A`** and **`-B`** flags respectively.
-```
-$ grep -A1 Arsenal premier-league-table.txt
-$ grep -B1 4 premier-league-table.txt
-```
-
-   ![grep1](../../images/grep1.PNG)
-
-
-Finally, the **`-A`** and **`-B`** can be combined into one single search.
-```
-$ grep -A1 -B1 Chelsea premier-league-table.txt
-```
-  ![grep2](../../images/grep2.PNG)
-   
+More information on **`grep`**  can be accessed [here](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/)
 
 
 
