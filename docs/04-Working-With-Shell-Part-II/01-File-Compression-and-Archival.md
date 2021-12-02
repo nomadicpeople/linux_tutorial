@@ -5,11 +5,13 @@ In this section, we will take a look to compress and archive files
 
 ## Viewing file sizes
 
-The **`du`** command, which stands for **`disk usage`** is a popular command to inspect the size of the file.
+The **`du`** command, which stands for **`disk usage`** is a popular command to inspect the size of the file. 
+
 - **`du`** with **`-sk`** shows the size of a file or directory in **`Kilobytes`**
   ```
   $ du -sk test.img
   ```  
+  where  **`test.img`** is some arbirary file that we want to get information on.
   
 - **`du`** with **`-sh`** shows the size of a file or directory in **`human readable format`**
   ```
@@ -33,6 +35,7 @@ To archive a file or directory. Use **`tar`** command followed by **`-c`** to cr
 $ tar -cf test.tar file1 file2 file3 
 $ ls -ltr test.tar
 ```
+where **`file1`**,**`file2`**,**`file3`** are some arbitrary files that we want to include into the archive. 
 
 The **`tar`** command followed by **`-tf`** option followed by the tar filename is used to see the contents of the tarball.
 ```
@@ -63,7 +66,8 @@ Compression is the technique used to reduce the size consumed by a file or a dat
     $ gzip test1.img
     $ xz test2.img
     ```
-  
+    where  **`test.img`**,**`test1.img`**,**`test2.img`** are some arbirary files that we want to compress.
+
 #### The space of the compressed files created by these three commands depends on a few factors, such as the type of data being compressed, the other factors that effect the size are the compression algorithm used by these commands and the compression level used.
 
 - The compressed files can be uncompressed by using the below commands
@@ -75,7 +79,6 @@ Compression is the technique used to reduce the size consumed by a file or a dat
     $ gunzip test1.img
     $ unxz test2.img
     ```
-  
      ![compress-uncompress](../../images/compress-uncompress.PNG)
     
 #### Compressed files need not to be uncompressed everytime
