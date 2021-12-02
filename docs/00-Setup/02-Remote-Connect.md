@@ -52,7 +52,8 @@ Select, copy and paste to the form.
 ```
 ssh -p <port_number> <user_name>@<remote_IP_address>
 ```   
-Note! Since this request will be approuved by our computer engineer at ISSAI this might take some time.
+## Note, Since this request will be approved by our computer engineer at ISSAI this might take some time.
+
 References:
 1. https://www.openssh.com
 2. https://github.com/kodekloudhub/linux-basics-course/blob/master/docs/06-Security-and-File-Permissions/06-SSH-and-SCP.md
