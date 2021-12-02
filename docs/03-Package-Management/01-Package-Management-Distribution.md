@@ -6,21 +6,15 @@ In this section, we will take a look at the Linux Package Management tools used 
 
 ## Introduction to Package Managers
 
-For **`Debain/Ubuntu`**, it is **`apt/dpkg`** and for CentOs/Redhat, it is **`RPM`**
-
-![package-managers](../../images/package-managers.PNG)
-
-**Question** : What is the difference between **`CentOS`**, **`RHEL`** and **`Ubuntu`***?
-- There are hundreds of Linux distributions in use today
+There are hundreds of Linux distributions in use today
 
 One of the common ways to catagorize linux distribution is by the package manager it uses.
-- For example: Distributions such as **`RHEL`**, **`Fedora`** and **`CentOS`**. are based on RPM. Hence they are known as **`RPM`** based distribution. The **`Debian`** family including **`Ubuntu`**, **`Debian`** and **`Linux Mint`** e.t.c. make use of **`Debian`** based package managers such as the **`DPKG`**. 
+- Distributions such as **`RHEL`**, **`Fedora`** and **`CentOS`**. are based on RPM. Hence they are known as **`RPM`** based distribution.
+- The **`Debian`** family including **`Ubuntu`**, **`Debian`** and **`Linux Mint`** e.t.c. make use of **`Debian`** based package managers such as the **`DPKG`** and **`APT`**. 
 
 ![deb-rpm](../../images/deb-rpm.PNG)
+![package-managers](../../images/package-managers.PNG)
 
-#### Now, Lets compare **`RHEL`** and **`CentOS`** Operating Systems.
-
-![rhel-centos](../../images/rhel-centos.PNG)
 
 #### What is a package?
 - A package in its simplest defination is a compressed archieve that contains all the files that are required by a particular software to run.
