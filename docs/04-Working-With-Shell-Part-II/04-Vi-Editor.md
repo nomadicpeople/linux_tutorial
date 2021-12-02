@@ -12,7 +12,8 @@ There are several options available, we will be focusing on the **`VI Editor`**.
 - The VI EDITOR is available in all most all of the linux distribution out of the box. 
 - The command to open the vi editor is **`vi`** followed by the filename that you want to create or append.
   ```
-  $ vi /home/michael/sample.txt
+  $ cd ~
+  $ vi file.txt
   ```
 - The VI EDITOR has three operation modes.
   1. Command Mode
