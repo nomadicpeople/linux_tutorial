@@ -1,6 +1,6 @@
 # Rsync
 
-- In this section we will learn about how to effiently transfer data between remotely connected machines.
+- In this section, we will learn about how to effiently transfer data between remotely connected machines.
 
 - As part of the 8.0 pre-release announcement, the OpenSSH project stated that they consider the **scp protocol outdated, inflexible, and not readily fixed**. They then go on to recommend the use of sftp or **rsync** for file transfer instead.
 
@@ -25,8 +25,7 @@ Parameters:
 
 #### Here are the most widely used options, the parameter that controls how the command behaves.
 
-- -a, --archive, archive mode, equivalent to -rlptgoD. This option tells rsync to syncs directories recursively, transfer special and block devices, preserve symbolic links, modification times, groups, ownership, and permissions.
-c
+- -a, --archive, archive mode, equivalent to -rlptgoD. This option tells rsync to sync directories recursively, transfer special and block devices, preserve symbolic links, modification times, groups, ownership, and permissions.
 - -P, equivalent to --partial --progress. When this option is used, rsync shows a progress bar during the transfer and keeps the partially transferred files. It is useful when transferring large files over slow or unstable network connections.
 - --delete. When this option is used, rsync deletes extraneous files from the destination location. It is useful for mirroring.
 - -q, --quiet. Use this option if you want to suppress non-error messages.
@@ -44,10 +43,14 @@ mkdir dir1
 mkdir dir2
 touch dir1/file{1..100}
 ```
-To verify that **dir1** contains 100 empty files run the following command:
+where **`touch`** command generates 100 empty files named **file1**, **file2**, .... **file100**
+
+To verify that **dir1** contains 100 files run the following command:
 ```
-ls dir1 | wc 
+ls dir1 | wc -l
 ```
+where **`wc -l`** counts the number of files in **dir1**.
+
 Let's sync the content of of the two directories on the same system. Note **dir2** is empty at this point. For this purpose we can use either **-r** or **-a** option. Thus the following two commands are equivalent:
 ```
 rsync -r dir1/ dir2
