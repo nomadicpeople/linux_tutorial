@@ -90,7 +90,7 @@ where **`/home/username/dir1`** is an example of the path to **dir1** on the rem
       ```
       rsync -avze  'ssh -p <local_port>' ~/dir1 <destination_user_name>@localhost:<destination_target_directory>
       ```
-      where **-z** option forces rsync to compresses the data as it is sent to the destination machine, **-h** option forces rsync to compresses the data as it is sent to the destination machine, and **-e** specifies the remote shell to use (here we specify which port to use with the default ssh)
+      where **-z** option forces rsync to compresses the data as it is sent to the destination machine, and **-e** specifies the remote shell to use (here we specify which port to use with the default ssh)
        More information about the options can be explored [here](https://explainshell.com/explain?cmd=rsync+-a+-v+-e+-z+--delete)
 
 
