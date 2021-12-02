@@ -2,7 +2,7 @@
 
 - In this section, we will walk you through the rules of connecting to ISSAI remote servers using  Secure Socket Shell (SSH).
 - We provide you with instructions on how to generate and share your public keys for passwordless authentication.
-- We have another section in Chapter 5 that dives deeper into SSH, SSH tunneling, tips and troubleshooting.
+- See [Section-5-3](docs/05-Security-and-File-Permissions/03-SSH.md) to dive deeper into SSH, SSH tunneling, tips and troubleshooting.
 
 In general, with the following command you can login to the remote server with a specific username and a password.
 
@@ -15,7 +15,7 @@ However, at ISSAI we practice **passwordless authentication**. To access the ser
    
 Let us go through the steps to generate a **keypair**. 
 
-1. If you have Windows, please open WSL. Otherwise, open the default terminal. Run this command:
+1. If you have Windows, please open WSL. Otherwise (macOS or Linux), open the default terminal. Run this command:
 
 ```
 ssh-keygen –t rsa
@@ -48,10 +48,11 @@ cat ~/.ssh/id_rsa.pub
 ```
 Select, copy and paste to the form.
 
-7. Once your request is approved and your account is ready, you will receive the information to connect to the servers via SSH:
+7. Once your request is approved and your account is ready, you will receive the information to connect to the servers via SSH. :
 ```
 ssh -p <port_number> <user_name>@<remote_IP_address>
 ```   
+Note! Since this request will be approuved by our computer engineer at ISSAI this might take some time.
 References:
 1. https://www.openssh.com
 2. https://github.com/kodekloudhub/linux-basics-course/blob/master/docs/06-Security-and-File-Permissions/06-SSH-and-SCP.md
