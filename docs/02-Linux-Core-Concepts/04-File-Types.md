@@ -34,18 +34,16 @@ There are three types of files.
      
 #### Let us now see how to identify different file types in Linux.
  
-One way to identify a file type is by making use of the **`file`** command. 
+One way to identify a file type is by making use of the **`file`** command: 
 ```
-$ file /home/michael
-$ flle bash-script.sh
-$ file insync1000.sock
-$ file /home/michael/bash-script
+$ file bash-script.sh
 ```
+Go ahead and try checking the file type of some of your lcoal files
 
 Another way to identify a file type is by making use of the **`ls -ld`** command
 ```
-ls -ld /home/michael
-ls -l basg-script.sh
+ls -ld bash-script.sh
 ```
+In the figure below, take a look at the first letter of the output. It is **"d"** since the given file is a directory. If it was a regular file, then it would start with **-**:
    ![file-types2](../../images/file-types2.PNG)
 
