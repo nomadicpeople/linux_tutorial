@@ -58,5 +58,6 @@ How to start?
 
 - [Chapter-6-Remote-Work](docs/08-Remote-Work)
   - [Section-6.1-Tmux](docs/08-Remote-Work/01-Tmux.md)
-  - [Section-6.2-Remote-Interpreter-Pycharm](02-Remote-Interpreter-Pycharm.md)
+  - [Section-6.2-Remote-Interpreter-Pycharm](docs/08-Remote-Work/02-Remote-Interpreter-Pycharm.md)
+  - [Section-6.3-Remote-Development-In-Visual-Studio](docs/08-Remote-Work/03-Remote-Development_Visual_Code.md)
 
