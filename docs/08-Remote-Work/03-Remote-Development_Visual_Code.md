@@ -18,15 +18,12 @@ The Remote Development extension pack allows you to open any folder in a contain
 3.Remote - WSL: Install the Windows Subsystem for Linux along with your preferred Linux distribution. (Note that WSL2 support is experimental.)
 
 4.Remote - Containers: Install and configure Docker for your operating system.
-
-    Windows / macOS:
-        Install Docker Desktop 2.0+ for Mac/Windows. Windows 10 Home (2004+) requires Docker Desktop 2.2+ and the WSL2 back-end. (Docker Toolbox is not supported.)
-        If not using WSL2 on Windows, right-click on the Docker task bar item, select Settings / Preferences and update Resources > File Sharing with any locations your source code is kept. See tips and tricks for troubleshooting.
-        To enable the Windows WSL2 back-end: Right-click on the Docker taskbar item and select Settings. Check Use the WSL2 based engine and verify your distribution is enabled under Resources > WSL Integration.
-
-    Linux:
-        Follow the official install instructions for Docker CE/EE 18.06+. If you use Docker Compose, follow the Docker Compose 1.21+ install directions.
-        Add your user to the docker group by using a terminal to run: sudo usermod -aG docker $USER Sign out and back in again so this setting takes effect.
+    - Windows / macOS:
+    Install Docker Desktop 2.0+ for Mac/Windows. Windows 10 Home (2004+) requires Docker Desktop 2.2+ and the WSL2 back-end. (Docker Toolbox is not supported.) 
+    To enable the Windows WSL2 back-end: Right-click on the Docker taskbar item and select Settings. Check Use the WSL2 based engine and verify your distribution is enabled under Resources > WSL Integration.
+    - Linux:
+    Follow the official install instructions for Docker CE/EE 18.06+. If you use Docker Compose, follow the Docker Compose 1.21+ install directions.
+    Add your user to the docker group by using a terminal to run: sudo usermod -aG docker $USER Sign out and back in again so this setting takes effect.
 
 ## Getting Started
 
