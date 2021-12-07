@@ -1,26 +1,17 @@
 # Tmux
 
-In this section we will go the installation and basic usage of Tmux to get you up and running.
-The following material was taken from (here)[https://linuxize.com/post/getting-started-with-tmux/].
+- In this section we will go the installation and basic usage of Tmux to get you up and running. 
 
+- Tmux is a terminal multiplexer an alternative to GNU Screen. In other words, it means that you can start a Tmux session and then open multiple windows inside that session. Each window occupies the entire screen and can be split into rectangular panes.
 
- #### Installing Tmux
+- With Tmux you can easily switch between multiple programs in one terminal, detach them and reattach them to a different terminal.
 
- You can easily install Tmux using the package manager of your distro.
+- Tmux sessions are persistent, which means that programs running in Tmux will continue to run even if you get disconnected.
 
- #### Installing Tmux on Ubuntu and Debian
- ```
- sudo apt install tmux
- ```
-
-
- #### Installing Tmux on macOS
- ```
- brew install tmux
- ```
+- Tmux has been installed on all of the ISSAI servers. If you would like to install and experiment with Tmux on your local machine, we refer you to this [post](https://linuxize.com/post/getting-started-with-tmux/). 
 
  #### Starting Your First Tmux Session
- To start your first Tmux session, simply type tmux in your console:
+ To start your first Tmux session, simply type **`tmux`** in your console:
  ```
  tmux
  ```
@@ -102,4 +93,6 @@ The following material was taken from (here)[https://linuxize.com/post/getting-s
  04. Reattach to the Tmux session by typing tmux attach-session -t my_session.
 
 
+References:
+1. https://linuxize.com/post/getting-started-with-tmux/
 
