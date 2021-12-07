@@ -10,10 +10,11 @@ The Remote Development extension pack allows you to open any folder in a contain
 ## Installation
 
 
+1. Install VS Code. On Windows, be sure to check Add to PATH when asked to Select Additional Tasks during installation.
 
-1. Install VS Code and this extension pack. On Windows, be sure to check Add to PATH when asked to Select Additional Tasks during installation.
+2. Open **`Extensions`** menu, search **Remote Development** and click **Install**
 
-2. Install an OpenSSH compatible SSH client.
+3. Install an OpenSSH compatible SSH client.
 #
 ## Getting Started
 
@@ -21,3 +22,6 @@ The Remote Development extension pack allows you to open any folder in a contain
 ![deb-rpm](../../images/remote_development_1.png)
 - Press **`Remote-SSH: Connect Current Window to Host...`**
 - Type the IP address and password
+
+## References:
+1. https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
