@@ -15,11 +15,13 @@ ssh -L <6000>:<destination_ip_address>:22 -p <remote_port> <remote_user_name>@<r
 ```
 where **`<destination_ip_address>`** is the IP address of the destination machine, **`<remote_port>`** is the port to establish the ssh connection, **`<remote_user_name>`** is your account name on the remote machine with IP **`<remote_ip_address>`**. 
 
-Remember, the tunnel has to stay active throughout the remote debugging session. 
+Note, if you can establish a DIRECT SSH connection to the destination from your local machine, then **`<remote_ip_address>`** is the IP address of the destination machine, and **`<destination_user_name>`** is your account name on the destination machine. **`<destination_ip_address>`** should be replaced with **`localhost`**.
 
+Remember, the tunnel has to stay active throughout the remote debugging session. 
+   
 3. Now we are ready to configure an interpreter in PyCharm using SSH.
    Using the offical documentation, follow the steps on ["Create a new remote Python interpreter via SSH credentials"](https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-ssh.html#ssh-credentials).
-  - At step 4, provide your account name on the destination machine ** for **Username**, **`6000`** for **Port**, **`localhost`** for **Host**
+  - At step 4, provide your account name on the destination machine **`<destination_user_name>`** for **Username**, **`6000`** for **Port**, **`localhost`** for **Host**.
   - As we practice passwordless authentication at ISSAI, choose the "Key pair" option at step 5. Provide the path to your private key on your local machine and passphrase for the key.
   - At step 6 you can provide the path to your conda environment, instead of the default python present on destination server. To do so: 
     1. Run in another terminal tab:
