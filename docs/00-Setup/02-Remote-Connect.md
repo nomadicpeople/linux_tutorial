@@ -18,7 +18,7 @@ Let us go through the steps to generate a **keypair**.
 1. If you have Windows, please open WSL. Otherwise (macOS or Linux), open the default terminal. Run this command:
 
 ```
-ssh-keygen –t rsa
+ssh-keygen -t rsa
 ```
 
 2. When you're prompted to "Enter a file in which to save the key," press **Enter**. This accepts the default file location.
