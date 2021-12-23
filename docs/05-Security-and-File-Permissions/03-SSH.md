@@ -36,3 +36,4 @@ Host remote_server
 
 References:
 1. https://linuxize.com/post/using-the-ssh-config-file/
+2. https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
