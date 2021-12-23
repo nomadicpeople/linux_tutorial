@@ -35,4 +35,4 @@ Host remote_server
  ```
 
 References:
-1.https://linuxize.com/post/using-the-ssh-config-file/
+1. https://linuxize.com/post/using-the-ssh-config-file/
