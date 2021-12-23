@@ -54,7 +54,7 @@ How to start?
   - [Section-5.3-Connect-SSH](docs/05-Security-and-File-Permissions/03-SSH.md)
   - [Section-5.4-Transfer-Data-Rsync](docs/05-Security-and-File-Permissions/04-Rsync.md)
   - [Section-5.5-Cronjob](docs/05-Security-and-File-Permissions/05-Cronjob.md)
-  
+  - [Section-5.3-Using the SSH Config File](docs/05-Security-and-File-Permissions/03-SSH.md)
 
 - [Chapter-6-Remote-Work](docs/08-Remote-Work)
   - [Section-6.1-Tmux](docs/08-Remote-Work/01-Tmux.md)
