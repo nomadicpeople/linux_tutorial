@@ -1,3 +1,6 @@
+# SSH Config File
+- You can configure your OpenSSH ssh client using various files as follows to save time and typing frequently used ssh client command-line options such as port, user, hostname, identity-file, and much more to increase your productivity from Linux/macOS or Unix desktop: 
+- You can configure your OpenSSH ssh client to save typing time for frequently used ssh client command-line options such as port number, user name, hostname/IP address, identity file, and much more. In addition to that it will increase your productivity from Linux/macOS or Unix desktop.
 
 # SSH Config File Location
 OpenSSH client-side configuration file is named config, and it is stored in the .ssh directory under the user’s home directory.
