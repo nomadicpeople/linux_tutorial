@@ -35,7 +35,13 @@ Host remote_server
   ForwardAgent yes
   LocalForward 222 localhost:22
 
- ```
+
+```
+# Connecting via SSH Config File 
+
+```
+ssh remote_server
+```
 
 References:
 1. https://linuxize.com/post/using-the-ssh-config-file/
